@@ -265,6 +265,20 @@
                 transform: rotate(-360deg);
             }
         }
+        
+        /* 独立的反旋转动画类，用于移动端点击时保持文字方向 */
+        @keyframes counter-rotate-mobile {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+        
+        .counter-rotating {
+            animation: counter-rotate-mobile 30s linear infinite !important;
+        }
 
         .leaf:hover {
             transform: scale(1.15);
@@ -309,6 +323,16 @@
             z-index: 5;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             animation: counter-rotate 30s linear infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         /* 中心圆 */
@@ -446,16 +470,40 @@
                 visibility: visible;
             }
 
+            /* 移除移动端垂直堆叠样式，使用与桌面端一致的旋转风车样式 */
+            .windmill-mobile {
+                display: none;
+            }
+
+            /* 调整移动端风车容器大小 */
             .windmill-container {
                 width: 300px;
                 height: 300px;
+                margin: 0 auto; /* 居中对齐 */
             }
 
+            /* 保持桌面端风车在移动端的显示 */
+            .windmill {
+                display: block;
+            }
+
+            /* 调整移动端风车叶片大小和定位 */
             .leaf {
                 width: 120px;
                 height: 120px;
                 font-size: 16px;
+            }
+
+            /* 确保移动端叶片标题有正确的反旋转效果 */
+            .leaf-title {
                 animation: counter-rotate 30s linear infinite;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                transform-style: preserve-3d;
+                backface-visibility: hidden;
             }
 
             .info-card {
@@ -469,52 +517,6 @@
 
             .info-description {
                 font-size: 14px;
-            }
-        }
-
-        /* ========================================
-           移动端四叶风车转换为垂直堆叠
-        ======================================== */
-        @media (max-width: 768px) {
-            .windmill-mobile {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                align-items: center;
-            }
-
-            .windmill-mobile .leaf {
-                position: relative;
-                width: 280px;
-                height: 80px;
-                border-radius: 15px;
-                transform: none;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                animation: pulse 2s ease-in-out infinite alternate;
-            }
-
-            .windmill-mobile .leaf .leaf-title {
-                font-size: 20px;
-                animation: none;
-            }
-
-            .windmill-mobile .leaf:hover {
-                transform: scale(1.05);
-            }
-
-            .windmill {
-                display: none;
-            }
-
-            @keyframes pulse {
-                from {
-                    transform: scale(1);
-                }
-                to {
-                    transform: scale(1.02);
-                }
             }
         }
 
@@ -914,13 +916,13 @@
     <!-- Hero 区域 -->
     <section class="hero">
             <div class="container">
-                <h2 class="section-title">祝愿伙伴们的投资，稳健有力，一帆风顺！</h2>
+                <h2 class="section-title">愿伙伴们的投资，稳健有力，一帆风顺！</h2>
                             <!-- 修复后的搜索框 -->
             <div class="search-container">
                 <div id="pagefind-search"></div>
             </div>
         <div class="windmill-container" id="windmillContainer">
-            <!-- 桌面端四叶风车 -->
+            <!-- 四叶风车（在所有设备上保持一致） -->
             <div class="windmill" id="windmill">
                 <div class="leaf leaf-1" data-info="risk-control">
                     <div class="leaf-title">风险控制</div>
@@ -936,22 +938,6 @@
                 </div>
                 <div class="center-circle">
                     <div class="center-text">策</div>
-                </div>
-            </div>
-
-            <!-- 移动端垂直堆叠卡片 -->
-            <div class="windmill-mobile" id="windmillMobile">
-                <div class="leaf leaf-1" data-info="risk-control">
-                    <div class="leaf-title">风险控制</div>
-                </div>
-                <div class="leaf leaf-2" data-info="investment-research">
-                    <div class="leaf-title">投资研报</div>
-                </div>
-                <div class="leaf leaf-3" data-info="trading-tips">
-                    <div class="leaf-title">小锦囊</div>
-                </div>
-                <div class="leaf leaf-4" data-info="side-income">
-                    <div class="leaf-title">周边稳赚</div>
                 </div>
             </div>
         </div>
@@ -1222,25 +1208,24 @@
         const infoDescription = document.getElementById('infoDescription');
         const closeBtn = document.getElementById('closeBtn');
         const windmill = document.getElementById('windmill');
-        const windmillMobile = document.getElementById('windmillMobile');
 
         // 信息数据
         const infoData = {
             'risk-control': {
                 title: '风险控制',
-                description: '专业的风险管理体系，通过多层次风控措施保护您的投资安全，确保投资风险可控，为您提供稳健的投资环境。'
+                description: '从仓位|杠杆、趋势判断、标的特性、本金属性等方面，阐述风险理念【查看】'
             },
             'investment-research': {
                 title: '投资研报',
-                description: '深度市场分析与投资研究报告，基于大数据分析和专业团队研究，为您提供精准的市场洞察和投资策略建议。'
+                description: '深度市场分析与投资研究报告，让您对各类投资标的，有清晰冷静的认识【查看】'
             },
             'trading-tips': {
                 title: '小锦囊',
-                description: '实用的交易技巧与投资心得分享，从基础到进阶的交易策略，助您提升投资技能，实现更好的投资收益。'
+                description: '周线图看方向，日线图定进出场时机；定期更新交易策略【查看】'
             },
             'side-income': {
                 title: '周边稳赚',
-                description: '多元化的理财产品和投资机会，通过多样化投资组合为您创造稳定收益，实现财富的保值增值。'
+                description: '在无显著交易机会时，把精力放在能稳赚不赔的工作上，通过推广奖励|返佣，以及开通信号提供者获得订阅收入【<a href="https://tougu.aibochinese.com/sure-win" style="color:red" target="_blank" rel="noopener noreferrer">查看</a>】'
             }
         };
 
@@ -1254,24 +1239,19 @@
                 infoDescription.textContent = info.description;
                 infoCard.classList.add('active');
                 
-                // 暂停风车旋转
+                // 暂停风车旋转，但保持叶片文字的反旋转效果
                 windmill.classList.add('paused');
+                
+                // 为所有叶片标题添加独立的反旋转动画类
+                document.querySelectorAll('.leaf-title').forEach(title => {
+                    title.classList.add('counter-rotating');
+                });
             }
         }
 
-        // 桌面端事件监听
+        // 风车叶片点击事件监听（适用于所有设备）
         if (windmill) {
             document.querySelectorAll('#windmill .leaf').forEach(leaf => {
-                leaf.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    handleLeafClick(this);
-                });
-            });
-        }
-
-        // 移动端事件监听
-        if (windmillMobile) {
-            document.querySelectorAll('#windmillMobile .leaf').forEach(leaf => {
                 leaf.addEventListener('click', function(e) {
                     e.stopPropagation();
                     handleLeafClick(this);
@@ -1283,6 +1263,10 @@
         closeBtn.addEventListener('click', function() {
             infoCard.classList.remove('active');
             windmill.classList.remove('paused');
+            // 移除叶片标题的独立反旋转类
+            document.querySelectorAll('.leaf-title').forEach(title => {
+                title.classList.remove('counter-rotating');
+            });
         });
 
         // 点击空白区域关闭信息卡片
@@ -1290,6 +1274,10 @@
             if (!infoCard.contains(e.target) && !e.target.closest('.leaf')) {
                 infoCard.classList.remove('active');
                 windmill.classList.remove('paused');
+                // 移除叶片标题的独立反旋转类
+                document.querySelectorAll('.leaf-title').forEach(title => {
+                    title.classList.remove('counter-rotating');
+                });
             }
         });
 
@@ -1298,6 +1286,10 @@
             if (e.key === 'Escape') {
                 infoCard.classList.remove('active');
                 windmill.classList.remove('paused');
+                // 移除叶片标题的独立反旋转类
+                document.querySelectorAll('.leaf-title').forEach(title => {
+                    title.classList.remove('counter-rotating');
+                });
             }
         });
 
@@ -1305,14 +1297,12 @@
         // 响应式处理
         // ========================================
         function handleResize() {
+            // 移动端和桌面端都使用同一个风车元素，不再需要切换显示/隐藏
             const isMobile = window.innerWidth <= 768;
             
-            if (isMobile) {
-                windmill.style.display = 'none';
-                windmillMobile.style.display = 'flex';
-            } else {
+            // 风车在所有设备上都保持显示
+            if (windmill) {
                 windmill.style.display = 'block';
-                windmillMobile.style.display = 'none';
             }
         }
 
