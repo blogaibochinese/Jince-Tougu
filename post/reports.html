@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>交易周边的稳赚项目 - 锦策投顾</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>各类投资标的的近期研究报告</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="/post/pagefind/pagefind-ui.css">
     
     <style>
@@ -24,7 +24,35 @@
             color: #ffffff;
             overflow-x: hidden;
             scroll-behavior: smooth;
-            background: linear-gradient(135deg, #1a2a6c, #2c3e50);
+            background-color: #f5f7fa;
+        }
+
+        /* 主要内容区域 */
+        .main-content {
+            max-width: 1200px;
+            margin: 100px auto 50px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        .main-content h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+
+        .main-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #555;
         }
 
         /* ========================================
@@ -392,6 +420,14 @@
             .wechat-popup p {
                 font-size: 13px;
             }
+            
+            .main-content h1 {
+                font-size: 2rem;
+            }
+            
+            .main-content p {
+                font-size: 1rem;
+            }
         }
 
         /* 移动端底部导航 */
@@ -432,7 +468,7 @@
 .search-container {
     position: relative;
     /* 删除 margin-right，改为自动左右 margin 实现居中 */
-    margin: 0 auto;           /* 关键：水平居中 */
+    margin: 20px auto;           /* 关键：水平居中 */
     z-index: 1001;
     min-width: 200px;
     max-width: 380px;         /* 建议加上最大宽度，和下拉结果保持一致 */
@@ -504,154 +540,6 @@
 #pagefind-search .pagefind-ui__result-excerpt { font-size: 13.5px; color: #666; line-height: 1.5; margin-top: 4px; }
 .pagefind-ui__result-excerpt mark { background: #dbeafe; color: #1e40af; padding: 1px 3px; border-radius: 3px; }
 #pagefind-search .pagefind-ui__message { padding: 20px; text-align: center; color: #666; font-size: 14px; }
-           section {
-            padding-top: 80px; /* 添加顶部内边距避免被固定导航栏遮挡 */
-        }
-        
-        .article-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .article-item {
-            text-align: center;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            transition: background-color 0.3s;
-        }
-        .article-item:hover { background-color: #f9f9f9; }
-        .article-link { text-decoration: none; color: #333; font-size: 16px; font-weight: bold; display: block; }
-        .article-link:hover { color: #007bff; }
-        @media (max-width: 768px) { 
-            .article-grid { grid-template-columns: 1fr; } 
-            
-            section {
-                padding-top: 80px; /* 移动端适配 */
-            }
-        }
-
-        .three-up {
-            display: grid;
-            grid-template-columns: repeat(3, 300px);
-            gap: 16px;
-            justify-content: center;
-            max-width: 1000px;
-            margin: 0 auto 22px auto;
-            padding: 8px 0;
-        }
-        .three-up .item img {
-            width: 300px;
-            height: 50px;
-            border-radius: 6px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-            object-fit: cover;
-            transition: all 0.2s;
-        }
-        .three-up .item img:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-        @media (max-width: 980px) { .three-up { grid-template-columns: repeat(2, 300px); } }
-        @media (max-width: 660px) { .three-up { grid-template-columns: 1fr; max-width: 300px; } } 
-        
-        /* 主要内容区域 */
-        .content-section {
-            max-width: 1200px;
-            margin: 30px auto;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .content-title {
-            text-align: center;
-            font-size: 2.2rem;
-            color: #2c3e50;
-            margin-bottom: 30px;
-            font-weight: 700;
-            background: linear-gradient(45deg, #FFD700, #B8860B);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .content-body {
-            color: #333;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-        
-        .content-body p {
-            margin-bottom: 20px;
-        }
-        
-        .highlight-box {
-            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-            border-left: 5px solid #2196F3;
-            padding: 20px;
-            margin: 25px 0;
-            border-radius: 0 10px 10px 0;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-        }
-        
-        .highlight-title {
-            color: #0d47a1;
-            font-weight: 600;
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-        }
-        
-        .benefits-list {
-            list-style-type: none;
-            padding: 0;
-        }
-        
-        .benefits-list li {
-            padding: 12px 0 12px 40px;
-            position: relative;
-            border-bottom: 1px dashed #ddd;
-        }
-        
-        .benefits-list li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            top: 12px;
-            background: #4CAF50;
-            color: white;
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-        }
-        
-        .cta-button {
-            display: block;
-            width: 200px;
-            margin: 30px auto;
-            padding: 15px 25px;
-            background: linear-gradient(45deg, #FFD700, #B8860B);
-            color: #fff;
-            text-align: center;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 30px;
-            box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(184, 134, 11, 0.4);
-        }
    </style>
 </head>
 
@@ -699,71 +587,15 @@
         </div>
     </nav>
     
-    <section> 
-        <div class="container">
-            <p>_</p>
-            <h2 class="section-title">愿伙伴们的投资，稳健有力，一帆风顺！</h2>
-            <!-- 修复后的搜索框 -->
-            <div class="search-container">
-                <div id="pagefind-search"></div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- 主要内容区域 -->
-    <section class="content-section">
-        <h1 class="content-title">交易周边的稳赚项目</h1>
+    <div class="main-content">
+        <h1>各类投资标的的近期研究报告</h1>
+        <p>深度市场分析与投资研究报告，让您对各类投资标的，有清晰冷静的认识</p>
         
-        <div class="content-body">
-            <p>在金融市场中，交易机会并非时刻都存在。当市场缺乏明确的方向或波动性较低时，明智的做法是将精力转向那些能够带来稳定收益的周边项目。这些项目不仅能为你创造额外收入，还能在市场低迷时期维持你的资金流动性。</p>
-            
-            <div class="highlight-box">
-                <h3 class="highlight-title">为什么选择交易周边项目？</h3>
-                <p>相比于高风险的市场交易，交易周边项目具有以下优势：</p>
-                <ul class="benefits-list">
-                    <li>风险较低，收益相对稳定</li>
-                    <li>不需要时刻盯盘，节省时间和精力</li>
-                    <li>可以作为主要交易收入的补充</li>
-                    <li>有助于建立长期稳定的收入来源</li>
-                </ul>
-            </div>
-            
-            <h3>推广奖励与返佣计划</h3>
-            <p>许多交易平台和金融服务商都提供推广奖励和返佣计划。通过推荐新用户注册并进行交易，你可以获得一定比例的佣金或奖励。这类项目的优势在于：</p>
-            
-            <ul class="benefits-list">
-                <li>一次推广，长期受益</li>
-                <li>无需自己承担交易风险</li>
-                <li>收益与被推荐人的交易活动直接相关</li>
-                <li>可以建立被动收入渠道</li>
-            </ul>
-            
-            <h3>信号提供者订阅服务</h3>
-            <p>如果你在某个市场领域拥有专业知识或独到的分析能力，可以考虑成为信号提供者。通过提供高质量的交易信号，你可以吸引订阅者并获得稳定的订阅收入。这包括：</p>
-            
-            <ul class="benefits-list">
-                <li>将你的专业知识变现</li>
-                <li>建立个人品牌和影响力</li>
-                <li>与订阅者形成互利共赢的关系</li>
-                <li>通过持续提供价值获得稳定收入</li>
-            </ul>
-            
-            <div class="highlight-box">
-                <h3 class="highlight-title">实施建议</h3>
-                <p>为了最大化这些项目的收益，建议采取以下策略：</p>
-                <ol>
-                    <li><strong>选择合适的平台：</strong>选择那些声誉良好、用户基础广泛的平台来开展推广活动。</li>
-                    <li><strong>建立个人品牌：</strong>通过社交媒体、博客或视频内容展示你的专业知识，吸引更多关注。</li>
-                    <li><strong>提供高质量内容：</strong>无论是推广信息还是交易信号，都要确保内容的质量和价值。</li>
-                    <li><strong>建立长期关系：</strong>与你的推荐用户或订阅者保持良好关系，提高留存率。</li>
-                </ol>
-            </div>
-            
-            <p>在无显著交易机会时，把精力放在能稳赚不赔的工作上，通过推广奖励|返佣，以及开通信号提供者获得订阅收入，不仅能够维持资金的增值，还能为你的交易生涯增添新的收入来源。这种多元化的收入策略将使你在金融市场中更加稳健地前行。</p>
-            
-            <a href="#" class="cta-button">了解更多详情</a>
+        <!-- 搜索框 -->
+        <div class="search-container">
+            <div id="pagefind-search"></div>
         </div>
-    </section>
+    </div>
 
     <!-- 页脚（完整保留） -->
     <footer>
@@ -793,6 +625,7 @@
         </div>
     </div>
 
+
     <!-- 微信浮窗 -->
     <div class="wechat-float" onclick="toggleWechatModal()">
         <div class="wechat-icon"></div>
@@ -805,28 +638,6 @@
             <button class="close-btn" onclick="closeWechatModal()">关闭</button>
         </div>
     </div>
-
-    <!-- Pagefind 搜索 -->
-    <script src="/post/pagefind/pagefind-ui.js"></script>
-    <script>
-        window.addEventListener('DOMContentLoaded', function () {
-            console.log("Initializing Pagefind search...");
-            try {
-                new PagefindUI({
-                    element: "#pagefind-search",
-                    showImages: false,
-                    showSubResults: true,
-                    resetStyles: false,
-                    translations: {
-                        placeholder: "投资标的、研报、教程..."
-                    }
-                });
-                console.log("Pagefind search initialized successfully");
-            } catch (error) {
-                console.error("Pagefind search initialization failed:", error);
-            }
-        });
-    </script>
 
     <!-- 脚本 -->
     <script>
@@ -899,113 +710,27 @@
             });
         });
     </script>
-
     
-    <!-- 终极链接修复解决方案 -->
+    <!-- Pagefind 搜索 -->
+    <script src="/post/pagefind/pagefind-ui.js"></script>
     <script>
-        // 终极链接修复解决方案
-        (function() {
-            'use strict';
-            
-            console.log('启动终极链接修复方案...');
-            
-            // 立即拦截所有链接点击事件
-            document.addEventListener('click', function(event) {
-                let target = event.target;
-                
-                // 找到最近的链接元素
-                while (target && target.tagName !== 'A') {
-                    target = target.parentElement;
-                }
-                
-                if (target && target.tagName === 'A') {
-                    const href = target.getAttribute('href');
-                    
-                    // 检查是否是相对HTML链接且缺少post前缀
-                    if (href && href.endsWith('.html') && 
-                        !href.startsWith('/') && 
-                        !href.startsWith('http') && 
-                        !href.includes('post/')) {
-                        
-                        const newHref = '/post/' + href;
-                        console.log('即时修复链接:', href, '->', newHref);
-                        
-                        // 阻止默认行为
-                        event.preventDefault();
-                        
-                        // 修复链接
-                        target.setAttribute('href', newHref);
-                        
-                        // 立即跳转到修复后的链接
-                        window.location.href = newHref;
+        window.addEventListener('DOMContentLoaded', function () {
+            console.log("Initializing Pagefind search...");
+            try {
+                new PagefindUI({
+                    element: "#pagefind-search",
+                    showImages: false,
+                    showSubResults: true,
+                    resetStyles: false,
+                    translations: {
+                        placeholder: "投资标的、研报、教程..."
                     }
-                }
-            }, true); // 使用捕获阶段
-            
-            // 监听所有动态生成的链接
-            const observer = new MutationObserver(function(mutations) {
-                mutations.forEach(function(mutation) {
-                    mutation.addedNodes.forEach(function(node) {
-                        if (node.nodeType === 1) {
-                            // 处理新添加的元素
-                            processElement(node);
-                        }
-                    });
                 });
-            });
-            
-            function processElement(element) {
-                // 如果是链接元素，直接处理
-                if (element.tagName === 'A') {
-                    fixLink(element);
-                }
-                
-                // 如果包含子元素，递归处理
-                if (element.querySelectorAll) {
-                    const links = element.querySelectorAll('a[href*=".html"]');
-                    links.forEach(fixLink);
-                }
+                console.log("Pagefind search initialized successfully");
+            } catch (error) {
+                console.error("Pagefind search initialization failed:", error);
             }
-            
-            function fixLink(link) {
-                const href = link.getAttribute('href');
-                if (href && href.endsWith('.html') && 
-                    !href.startsWith('/') && 
-                    !href.startsWith('http') && 
-                    !href.includes('post/')) {
-                    
-                    const newHref = '/post/' + href;
-                    console.log('修复动态链接:', href, '->', newHref);
-                    link.setAttribute('href', newHref);
-                }
-            }
-            
-            // 开始监听DOM变化
-            observer.observe(document.body, {
-                childList: true,
-                subtree: true
-            });
-            
-            // 立即处理现有页面中的所有链接
-            function fixExistingLinks() {
-                const links = document.querySelectorAll('a[href*=".html"]');
-                links.forEach(fixLink);
-                console.log(`已处理 ${links.length} 个现有链接`);
-            }
-            
-            // 页面加载完成后修复现有链接
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', fixExistingLinks);
-            } else {
-                fixExistingLinks();
-            }
-            
-            // 定期检查和修复（备用机制）
-            setInterval(fixExistingLinks, 1000);
-            
-            console.log('终极链接修复方案已激活');
-        })();
+        });
     </script>
-    
 </body>
 </html>

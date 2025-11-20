@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主流投资标的的具体操作策略</title>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, hsl(0, 0%, 100%) 100%);
+            min-height: 100vh;
+        }
+
+        /* 固定导航栏 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar.scrolled {
+            background: rgba(0, 0, 0, 0.95);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo img {
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-item.dropdown {
+            position: relative;
+        }
+
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 10px 0;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-item.dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 20px;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            padding-left: 25px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        /* 搜索框样式 */
+        .search-container {
+            position: relative;
+            margin: 20px auto;
+            z-index: 1001;
+            min-width: 200px;
+            max-width: 380px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #pagefind-search .pagefind-ui__search-input {
+            padding: 10px 16px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            font-size: 16px;
+            width: 300px;
+            max-width: 100%;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            background: white;
+            color: #333;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        #pagefind-search .pagefind-ui__search-input:focus {
+            border-color: #4a6fa5;
+            box-shadow: 0 0 0 4px rgba(74, 111, 165, 0.2);
+        }
+
+        #pagefind-search .pagefind-ui__results {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            right: auto;
+            width: 380px;
+            max-height: 70vh;
+            overflow-y: auto;
+            margin-top: 8px;
+            z-index: 1000;
+            padding: 8px 0;
+        }
+
+        #pagefind-search .pagefind-ui__result {
+            padding: 12px 16px;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.2s;
+        }
+
+        #pagefind-search .pagefind-ui__result:last-child { border-bottom: none; }
+        #pagefind-search .pagefind-ui__result:hover { background-color: #f8f9ff; }
+        #pagefind-search .pagefind-ui__result-title { font-size: 15px; font-weight: 600; color: #1f2937; margin-bottom: 4px; }
+        #pagefind-search .pagefind-ui__result-link { 
+            color: #3B82F6; 
+            text-decoration: none; 
+            display: inline-block;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+        }
+        #pagefind-search .pagefind-ui__result-link:hover { text-decoration: underline; }
+        #pagefind-search .pagefind-ui__result-excerpt { font-size: 13.5px; color: #666; line-height: 1.5; margin-top: 4px; }
+        .pagefind-ui__result-excerpt mark { background: #dbeafe; color: #1e40af; padding: 1px 3px; border-radius: 3px; }
+        #pagefind-search .pagefind-ui__message { padding: 20px; text-align: center; color: #666; font-size: 14px; }
+
+        /* 主体内容区域 */
+        .container {
+            max-width: 1200px;
+            margin: 90px auto 40px auto;
+            padding: 0 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 30px 0;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        /* 内容区域 */
+        .content-section {
+            padding: 40px 20px;
+        }
+
+        .content-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            position: relative;
+        }
+
+        .content-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .content-body {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .content-body p {
+            margin-bottom: 25px;
+            text-align: center;
+            color: #555;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .highlight-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .highlight-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 1.5px;
+        }
+
+        ul.benefits-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        ul.benefits-list li {
+            padding: 12px 0 12px 40px;
+            position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        ul.benefits-list li:last-child {
+            border-bottom: none;
+        }
+
+        ul.benefits-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 28px;
+            height: 28px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        ol {
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+
+        ol li {
+            margin-bottom: 15px;
+            padding-left: 10px;
+        }
+
+        strong {
+            color: #ffd700;
+            font-weight: 600;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        /* 页脚 */
+        footer {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+
+        .footer p {
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 5px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .footer a:hover {
+            transform: scale(1.1);
+        }
+
+        .footer img {
+            width: 30px;
+            height: 30px;
+            display: block;
+            margin: 0 auto 5px auto;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: right 0.3s ease;
+                gap: 30px;
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-link {
+                font-size: 24px;
+            }
+
+            .dropdown-content {
+                position: static;
+                background: rgba(0, 0, 0, 0.5);
+                transform: none;
+                margin-top: 20px;
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .content-title {
+                font-size: 28px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .content-body {
+                font-size: 16px;
+            }
+
+            .highlight-box {
+                padding: 20px;
+            }
+
+            .highlight-title {
+                font-size: 20px;
+            }
+
+            .wechat-float {
+                width: 45px;
+                height: 45px;
+                right: 15px;
+                bottom: 80px;
+            }
+
+            .wechat-popup {
+                max-width: 280px;
+                padding: 25px 20px;
+            }
+
+            .wechat-qr {
+                width: 160px;
+                height: 160px;
+            }
+
+            .wechat-popup h3 {
+                font-size: 18px;
+            }
+
+            .wechat-popup p {
+                font-size: 13px;
+            }
+        }
+
+         /* 移动端底部导航 */
+        .mobile-nav { display: none; }
+        @media (max-width: 768px) {
+            .mobile-nav {
+                display: block;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: white;
+                box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+                z-index: 50;
+            }
+            .mobile-nav .nav-container { display: flex; justify-content: space-around; align-items: center; padding: 12px 0; }
+            .mobile-nav .nav-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; transition: all 0.3s ease; color: #666; }
+            .mobile-nav .nav-item.active { color: #3B82F6; transform: scale(1.1); }
+            .mobile-nav .nav-item .icon { font-size: 20px; margin-bottom: 4px; }
+            .mobile-nav .nav-item .text { font-size: 12px; }
+            .mobile-nav .nav-item.center {
+                background: #3B82F6;
+                color: white;
+                border-radius: 50%;
+                width: 48px;
+                height: 48px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-top: -24px;
+                box-shadow: 0 2px 10px rgba(59,130,246,0.3);
+            }
+            .mobile-nav .nav-item.center:hover { background: #2563eb; }
+        }
+
+        /* 悬浮微信图标样式 */
+        .wechat-float {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            background-color: hsl(148, 45%, 88%);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        .wechat-float:hover { transform: translateY(-50%) scale(1.1); }
+        .wechat-icon {
+            width: 40px;
+            height: 40px;
+            background-image: url('https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%C2%B7%E5%AE%A2%E5%9B%BE%E7%89%87%E5%BA%93/wechaticon.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* 微信弹窗 */
+        .wechat-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        .wechat-modal.show {
+            display: flex;
+        }
+        .wechat-popup {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 15px;
+            padding: 30px 25px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 320px;
+            width: 90%;
+            position: relative;
+            animation: slideIn 0.3s ease-out;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        .wechat-popup::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #FFD700, #B8860B, #FFA500);
+            border-radius: 17px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        .wechat-qr { 
+            width: 200px; 
+            height: 200px; 
+            margin: 0 auto 15px; 
+            display: block; 
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .wechat-popup h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .wechat-popup p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .close-btn {
+            background: linear-gradient(45deg, #ff4d4f, #ff7875);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 77, 79, 0.3);
+        }
+        .close-btn:hover { 
+            background: linear-gradient(45deg, #ff7875, #ff4d4f);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 77, 79, 0.4);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: right 0.3s ease;
+                gap: 30px;
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-link {
+                font-size: 24px;
+            }
+
+            .dropdown-content {
+                position: static;
+                background: rgba(0, 0, 0, 0.5);
+                transform: none;
+                margin-top: 20px;
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .content-title {
+                font-size: 28px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .content-body {
+                font-size: 16px;
+            }
+
+            .highlight-box {
+                padding: 20px;
+            }
+
+            .highlight-title {
+                font-size: 20px;
+            }
+
+            .wechat-float {
+                width: 45px;
+                height: 45px;
+                right: 15px;
+                bottom: 80px;
+            }
+
+            .wechat-popup {
+                max-width: 280px;
+                padding: 25px 20px;
+            }
+
+            .wechat-qr {
+                width: 160px;
+                height: 160px;
+            }
+
+            .wechat-popup h3 {
+                font-size: 18px;
+            }
+
+            .wechat-popup p {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 固定导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h2><a href="https://tougu.aibochinese.com/" target="_blank">
+                    <img src="https://cf.aibochinese.com/%E7%B4%A0%E6%9D%90%E7%AB%99/202511/tougu%20logo.png" alt="网站Logo">
+                </a></h2>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">推荐平台 ▼</a>
+                    <div class="dropdown-content">
+                        <a href="https://blog.aibochinese.com/web3/kvb" class="dropdown-item">KVB plus</a>
+                        <a href="https://sso.followme.ceo/register?vcode=877637" class="dropdown-item">Follow me社区</a>
+                        <a href="https://blog.aibochinese.com/web3/binance" class="dropdown-item">币安</a>
+                        <a href="https://blog.aibochinese.com/payment/roogoo" class="dropdown-item">Roogoo联名万事达卡</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">外汇</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">股指</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">大宗商品</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">加密货币</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">出入金</a>
+                </li>
+            </ul>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    
+    <section> 
+        <div class="container">
+            <h2 class="section-title">愿伙伴们的投资，稳健有力，一帆风顺！</h2>
+            <!-- 搜索框 -->
+            <div class="search-container">
+                <div id="pagefind-search"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 主要内容区域 -->
+    <section class="content-section">
+        <h1 class="content-title">主流投资标的的具体操作策略</h1>
+        
+        <div class="content-body">
+            <p>周线图看方向，日线图定进出场时机；定期更新交易策略</p>
+            
+            <div class="highlight-box">
+                <h3 class="highlight-title">策略核心要点</h3>
+                <p>成功的交易策略需要结合不同时间周期的分析方法，以下是关键要素：</p>
+                <ul class="benefits-list">
+                    <li>使用周线图确定整体趋势方向，避免逆势操作</li>
+                    <li>利用日线图精确识别进场和出场时机点</li>
+                    <li>建立定期评估和更新机制，适应市场变化</li>
+                    <li>严格执行风险管理原则，保护资本安全</li>
+                </ul>
+            </div>
+            
+            <h3>周线图分析 - 把握大势</h3>
+            <p>周线图反映的是较长时间周期的趋势走向，对于制定交易方向至关重要：</p>
+            
+            <ul class="benefits-list">
+                <li>识别主要趋势：上升、下降或震荡市</li>
+                <li>确定关键支撑阻力位</li>
+                <li>观察重要技术形态突破</li>
+                <li>评估市场情绪和参与者行为</li>
+            </ul>
+            
+            <h3>日线图应用 - 精准执行</h3>
+            <p>在确定大方向后，日线图帮助我们找到最佳的买卖时机：</p>
+            
+            <ul class="benefits-list">
+                <li>寻找具体的进场信号（如均线交叉、突破等）</li>
+                <li>设置合理的止损和止盈位置</li>
+                <li>监控短期价格波动和成交量变化</li>
+                <li>捕捉回调或反弹的机会点</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <h3 class="highlight-title">策略维护与优化</h3>
+                <p>市场不断变化，交易策略也需要持续更新和完善：</p>
+                <ol>
+                    <li><strong>定期回顾：</strong>每周或每月评估策略表现，记录成功和失败案例</li>
+                    <li><strong>参数调整：</strong>根据市场特征变化，适时调整技术指标参数</li>
+                    <li><strong>规则完善：</strong>增加新的过滤条件或风险管理措施</li>
+                    <li><strong>心理建设：</strong>保持纪律性和耐心，避免情绪化交易</li>
+                </ol>
+            </div>
+            
+            <p>这套"周线看方向，日线定时机"的操作策略，通过多时间框架分析，既把握了市场大势，又实现了精准执行。配合定期更新机制，能够有效适应市场的动态变化，为投资者提供一套系统性的交易指导方案。</p>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer">
+            <p style="margin-bottom: 10px;">感谢关注:
+                <a href="https://www.youtube.com/@blog.aibochinese" style="color:white; display:inline-block; vertical-align:middle;" target="_blank" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%C2%B7%E5%AE%A2%E5%9B%BE%E7%89%87%E5%BA%93/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E5%9B%BE%E7%89%87/youtube%20logo%2030.png" style="width: 30px; height: 30px; display:block;" /></a>
+                <a href="https://x.com/i/communities/1988635370549096727" style="color:white; display:inline-block; vertical-align:middle;" target="_blank" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%E6%B1%89%E8%AF%AD%E5%AE%A2%E6%88%B7%E7%AB%AF/icons8-x-30.png" style="width: 30px; height: 30px; display:block;" /></a>
+                <a href="https://www.facebook.com/blog.aibochinese" style="color:white; display:inline-block; vertical-align:middle;" target="_blank" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%C2%B7%E5%AE%A2%E5%9B%BE%E7%89%87%E5%BA%93/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E5%9B%BE%E7%89%87/facebook%20log0%2030.png" style="width: 30px; height: 30px; display:block;" /></a>
+                <a href="https://wa.me/message/QXYAFEGTDWIBE1" style="color:white; display:inline-block; vertical-align:middle;" target="_blank" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%B4%A0%E6%9D%90%E7%AB%99/whatsapp-48.png" style="width: 30px; height: 30px; display:block;" /></a>
+                <a href="https://space.bilibili.com/1014631395?spm_id_from=333.1387.0.0" style="color:white; display:inline-block; vertical-align:middle;" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%B4%A0%E6%9D%90%E7%AB%99/icons8-%E8%83%86%E6%B1%81-30.png" style="width: 30px; height: 30px; display:block;" /></a>
+                <a href="https://github.com/blogaibochinese" style="color:white; display:inline-block; vertical-align:middle;" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%C2%B7%E5%AE%A2%E5%9B%BE%E7%89%87%E5%BA%93/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E5%9B%BE%E7%89%87/icons8-github-30.png" style="width: 30px; height: 30px; display:block;" /></a>
+                <a href="https://xhslink.com/m/5it26wH34Zd" style="color:white; display:inline-block; vertical-align:middle;" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%B4%A0%E6%9D%90%E7%AB%99/rednote.png" style="width: 30px; height: 30px; display:block;" /></a>
+            </p>
+            <p style="font-size: 12px; color: hsl(0, 0%, 3%);">© 2025 <a href="https://blog.aibochinese.com/" style="color:red " target="_blank" rel="noopener noreferrer">爱博·客</a> - 所有权利保留</p>
+            <p>···</p>
+        </div>
+    </footer>
+
+    <!-- 移动端底部导航 -->
+    <div class="mobile-nav">
+        <div class="nav-container">
+            <a href="https://blog.aibochinese.com/" class="nav-item active"><i class="fas fa-home icon"></i><span class="text">首页</span></a>
+            <a href="https://tougu.aibochinese.com/strategy" class="nav-item"><i class="fas fa-map"></i><span class="text">策略</span></a>
+            <a href="https://tougu.aibochinese.com/newest" class="nav-item center"><i class="fas fa-sync-alt icon"></i><span class="text">最新</span></a>
+            <a href="https://tougu.aibochinese.com/reports" class="nav-item"><i class="fas fa-chart-line"></i><span class="text">研报</span></a>
+            <a href="https://tougu.aibochinese.com/sure-win" class="nav-item"><i class="fas fa-dollar-sign icon"></i><span class="text">淘金</span></a>
+        </div>
+    </div>
+
+    <!-- 微信浮窗 -->
+    <div class="wechat-float" onclick="toggleWechatModal()">
+        <div class="wechat-icon"></div>
+    </div>
+    <div id="wechatModal" class="wechat-modal" onclick="closeWechatModal(event)">
+        <div class="wechat-popup" onclick="event.stopPropagation()">
+            <h3>微信客服</h3>
+            <img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%C2%B7%E5%AE%A2%E5%9B%BE%E7%89%87%E5%BA%93/%E6%B7%BB%E5%8A%A0%E5%BE%AE%E4%BF%A1.png" alt="微信二维码" class="wechat-qr">
+            <p>扫描添加客服微信</p>
+            <button class="close-btn" onclick="closeWechatModal()">关闭</button>
+        </div>
+    </div>
+
+    <!-- Pagefind 搜索 -->
+    <script src="/post/pagefind/pagefind-ui.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            console.log("Initializing Pagefind search...");
+            try {
+                new PagefindUI({
+                    element: "#pagefind-search",
+                    showImages: false,
+                    showSubResults: true,
+                    resetStyles: false,
+                    translations: {
+                        placeholder: "🔍投资标的、教程、研报..."
+                    }
+                });
+                console.log("Pagefind search initialized successfully");
+            } catch (error) {
+                console.error("Pagefind search initialization failed:", error);
+            }
+        });
+    </script>
+
+    <!-- 脚本 -->
+    <script>
+        // 微信弹窗
+        function toggleWechatModal() {
+            const modal = document.getElementById('wechatModal');
+            if (modal.style.display === 'flex' || modal.classList.contains('show')) {
+                closeWechatModal();
+            } else {
+                showWechatModal();
+            }
+        }
+        
+        function showWechatModal() {
+            const modal = document.getElementById('wechatModal');
+            modal.style.display = 'flex';
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden'; // 防止背景滚动
+        }
+        
+        function closeWechatModal(event) {
+            if (event && event.stopPropagation) {
+                event.stopPropagation();
+            }
+            const modal = document.getElementById('wechatModal');
+            modal.style.display = 'none';
+            modal.classList.remove('show');
+            document.body.style.overflow = ''; // 恢复背景滚动
+        }
+
+        // 汉堡菜单和移动端导航
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('navMenu');
+            const navbar = document.getElementById('navbar');
+            
+            // 汉堡菜单点击事件
+            if (hamburger) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+            }
+            
+            // 点击导航菜单项后关闭移动端菜单
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+            
+            // 滚动时改变导航栏样式
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+            
+            // 移动端底部导航
+            const navItems = document.querySelectorAll('.mobile-nav .nav-item:not(.center)');
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    navItems.forEach(i => i.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
