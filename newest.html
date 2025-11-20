@@ -503,7 +503,11 @@
 #pagefind-search .pagefind-ui__result-excerpt { font-size: 13.5px; color: #666; line-height: 1.5; margin-top: 4px; }
 .pagefind-ui__result-excerpt mark { background: #dbeafe; color: #1e40af; padding: 1px 3px; border-radius: 3px; }
 #pagefind-search .pagefind-ui__message { padding: 20px; text-align: center; color: #666; font-size: 14px; }
-           .article-grid {
+           section {
+            padding-top: 80px; /* 添加顶部内边距避免被固定导航栏遮挡 */
+        }
+        
+        .article-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
@@ -521,7 +525,13 @@
         .article-item:hover { background-color: #f9f9f9; }
         .article-link { text-decoration: none; color: #333; font-size: 16px; font-weight: bold; display: block; }
         .article-link:hover { color: #007bff; }
-        @media (max-width: 768px) { .article-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { 
+            .article-grid { grid-template-columns: 1fr; } 
+            
+            section {
+                padding-top: 80px; /* 移动端适配 */
+            }
+        }
 
         .three-up {
             display: grid;
@@ -554,7 +564,7 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="logo">
-                <h2><a href="https://blog.aibochinese.com/" target="_blank">
+                <h2><a href="https://tougu.aibochinese.com/" target="_blank">
                     <img src="https://cf.aibochinese.com/%E7%B4%A0%E6%9D%90%E7%AB%99/202511/tougu%20logo.png" alt="网站Logo">
                 </a></h2>
             </div>
@@ -562,10 +572,10 @@
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link">推荐平台 ▼</a>
                     <div class="dropdown-content">
-                        <a href="#" class="dropdown-item">KVB plus</a>
-                        <a href="#" class="dropdown-item">Follow me社区</a>
-                        <a href="#" class="dropdown-item">币安</a>
-                        <a href="#" class="dropdown-item">Roogoo联名万事达卡</a>
+                        <a href="https://blog.aibochinese.com/web3/kvb" class="dropdown-item">KVB plus</a>
+                        <a href="https://sso.followme.ceo/register?vcode=877637" class="dropdown-item">Follow me社区</a>
+                        <a href="https://blog.aibochinese.com/web3/binance" class="dropdown-item">币安</a>
+                        <a href="https://blog.aibochinese.com/payment/roogoo" class="dropdown-item">Roogoo联名万事达卡</a>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -599,7 +609,7 @@
             <div class="search-container">
                 <div id="pagefind-search"></div>
             </div>
-              </section>
+
                    <div class="article-grid">
             <div class="article-item"><a href="https://blog.aibochinese.com/newest" class="article-link">最新文章</a></div>
             <div class="article-item"><a href="https://blog.aibochinese.com/education/tutor%20guide" class="article-link">国际中文教师从业指南</a></div>
@@ -608,7 +618,7 @@
             <div class="article-item"><a href="https://blog.aibochinese.com/tools/photoshop" class="article-link">Photoshop 2025中文破解版 下载⏬使用</a></div>
             <div class="article-item"><a href="https://blog.aibochinese.com/sitesbuild" class="article-link">Cloudflare搭建永久免费网站</a></div>
         </div>
-
+ </section>
     <!-- Pagefind 搜索（已完美修复） -->
     <script src="/post/pagefind/pagefind-ui.js"></script>
     <script>
