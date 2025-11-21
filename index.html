@@ -218,6 +218,59 @@
             height: 400px;
         }
 
+        /* Hero头部区域 - 标题和搜索框 */
+        .hero-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            margin-bottom: 20px;
+        }
+        
+        .search-container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Hero内容区域 - 桌面端双列布局 */
+        .hero-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 金十数据容器 */
+        .jinshi-data {
+            flex: 1;
+            height: 400px;
+            min-width: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            background: rgba(15, 14, 14, 0.9);
+        }
+
+        /* 移动端隐藏金十数据 */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+            }
+            
+            .jinshi-data {
+                display: none;
+            }
+            
+            .windmill-container {
+                width: 300px;
+                height: 300px;
+            }
+        }
+
         /* 四叶风车 */
         .windmill {
             width: 100%;
@@ -915,29 +968,38 @@
 
     <!-- Hero 区域 -->
     <section class="hero">
-            <div class="container">
+        <div class="container">
+            <div class="hero-header">
                 <h2 class="section-title">愿伙伴们的投资，稳健有力，一帆风顺！</h2>
-                            <!-- 修复后的搜索框 -->
-            <div class="search-container">
-                <div id="pagefind-search"></div>
+                <!-- 修复后的搜索框 -->
+                <div class="search-container">
+                    <div id="pagefind-search"></div>
+                </div>
             </div>
-        <div class="windmill-container" id="windmillContainer">
-            <!-- 四叶风车（在所有设备上保持一致） -->
-            <div class="windmill" id="windmill">
-                <div class="leaf leaf-1" data-info="risk-control">
-                    <div class="leaf-title"><a href="https://tougu.aibochinese.com/risk-control" style="color:#ffffff" target="_blank" rel="noopener noreferrer">风险控制</a></div>
+            <div class="hero-content">
+                <div class="windmill-container" id="windmillContainer">
+                    <!-- 四叶风车（在所有设备上保持一致） -->
+                    <div class="windmill" id="windmill">
+                        <div class="leaf leaf-1" data-info="risk-control">
+                            <div class="leaf-title"><a href="https://tougu.aibochinese.com/risk-control" style="color:#ffffff" target="_blank" rel="noopener noreferrer">风险控制</a></div>
+                        </div>
+                        <div class="leaf leaf-2" data-info="investment-research">
+                            <div class="leaf-title"><a href="https://tougu.aibochinese.com/reports" style="color:#ffffff" target="_blank" rel="noopener noreferrer">投资研报</a></div>
+                        </div>
+                        <div class="leaf leaf-3" data-info="trading-tips">
+                            <div class="leaf-title"><a href="https://tougu.aibochinese.com/strategy" style="color:#ffffff" target="_blank" rel="noopener noreferrer">小锦囊</a></div>
+                        </div>
+                        <div class="leaf leaf-4" data-info="side-income">
+                            <div class="leaf-title"><a href="https://tougu.aibochinese.com/sure-win" style="color:#ffffff" target="_blank" rel="noopener noreferrer">周边稳赚</a></div>
+                        </div>
+                        <div class="center-circle">
+                            <div class="center-text">策</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="leaf leaf-2" data-info="investment-research">
-                    <div class="leaf-title"><a href="https://tougu.aibochinese.com/reports" style="color:#ffffff" target="_blank" rel="noopener noreferrer">投资研报</a></div>
-                </div>
-                <div class="leaf leaf-3" data-info="trading-tips">
-                    <div class="leaf-title"><a href="https://tougu.aibochinese.com/strategy" style="color:#ffffff" target="_blank" rel="noopener noreferrer">小锦囊</a></div>
-                </div>
-                <div class="leaf leaf-4" data-info="side-income">
-                    <div class="leaf-title"><a href="https://tougu.aibochinese.com/sure-win" style="color:#ffffff" target="_blank" rel="noopener noreferrer">周边稳赚</a></div>
-                </div>
-                <div class="center-circle">
-                    <div class="center-text">策</div>
+                <!-- 数据iframe - 仅在桌面端显示 -->
+                <div class="jinshi-data">
+                 <iframe src="https://www.mql5.com/en/economic-calendar/widget" width="100%" height="500" frameborder="0"></iframe>
                 </div>
             </div>
         </div>
@@ -950,7 +1012,7 @@
         </div>
     </section>
         <div class="article-grid">
-            <div class="article-item"><a href="https://blog.aibochinese.com/newest" class="article-link">最新文章</a></div>
+            <div class="article-item"><a href="https://tougu.aibochinese.com/newest" class="article-link">最新文章</a></div>
             <div class="article-item"><a href="https://blog.aibochinese.com/education/tutor%20guide" class="article-link">国际中文教师从业指南</a></div>
             <div class="article-item"><a href="https://blog.aibochinese.com/payment/roogoo" class="article-link">Roogoo联名万事达卡，免开卡费0年费</a></div>
             <div class="article-item"><a href="https://blog.aibochinese.com/tools/capcut" class="article-link">免费使用剪映9.0.0会员功能</a></div>
@@ -1335,5 +1397,6 @@
 
         window.addEventListener('scroll', requestScrollUpdate);
     </script>
+
 </body>
 </html>
