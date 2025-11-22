@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>交易周边的稳赚项目 - 锦策投顾</title>
+    <title>锦策投顾 - 内容更新</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="/post/pagefind/pagefind-ui.css">
     
@@ -18,15 +18,13 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: "Microsoft YaHei", "微软雅黑", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: #ffffff;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-            background: linear-gradient(135deg, #1a2a6c, #2c3e50);
-        }
-
+ body { font-family: "Microsoft YaHei", Arial, sans-serif; line-height: 1.8; padding: 20px; background: #f9f9f9; color: #333; max-width: 900px; margin: 0 auto; }
+        h1, h2, h3 { color: #1a6edb; }
+        h1 { text-align: center; }
+        ol, ul { padding-left: 30px; }
+        code { background: #eee; padding: 2px 6px; border-radius: 4px; }
+        .highlight { background: #fff3e0; padding: 15px; border-left: 5px solid #ff9800; margin: 20px 0; }
+        .warning { background: #ffebee; padding: 15px; border-left: 5px solid #f44336; margin: 20px 0; }
         /* ========================================
            固定顶部导航栏
         ======================================== */
@@ -508,199 +506,6 @@
             padding-top: 80px; /* 添加顶部内边距避免被固定导航栏遮挡 */
         }
         
-        .article-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .article-item {
-            text-align: center;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            transition: background-color 0.3s;
-        }
-        .article-item:hover { background-color: #f9f9f9; }
-        .article-link { text-decoration: none; color: #333; font-size: 16px; font-weight: bold; display: block; }
-        .article-link:hover { color: #007bff; }
-        @media (max-width: 768px) { 
-            .article-grid { grid-template-columns: 1fr; } 
-            
-            section {
-                padding-top: 80px; /* 移动端适配 */
-            }
-        }
-
-        .three-up {
-            display: grid;
-            grid-template-columns: repeat(3, 300px);
-            gap: 16px;
-            justify-content: center;
-            max-width: 1000px;
-            margin: 0 auto 22px auto;
-            padding: 8px 0;
-        }
-        .three-up .item img {
-            width: 300px;
-            height: 50px;
-            border-radius: 6px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-            object-fit: cover;
-            transition: all 0.2s;
-        }
-        .three-up .item img:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-        @media (max-width: 980px) { .three-up { grid-template-columns: repeat(2, 300px); } }
-        @media (max-width: 660px) { .three-up { grid-template-columns: 1fr; max-width: 300px; } } 
-        
-        /* 主要内容区域 */
-        .content-section {
-            max-width: 1200px;
-            margin: 30px auto;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .content-title {
-            text-align: center;
-            font-size: 2.2rem;
-            color: #2c3e50;
-            margin-bottom: 30px;
-            font-weight: 700;
-            background: linear-gradient(45deg, #FFD700, #B8860B);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .content-body {
-            color: #333;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-        
-        .content-body p {
-            margin-bottom: 20px;
-        }
-        
-        .highlight-box {
-            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-            border-left: 5px solid #2196F3;
-            padding: 20px;
-            margin: 25px 0;
-            border-radius: 0 10px 10px 0;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-        }
-        
-        .highlight-title {
-            color: #0d47a1;
-            font-weight: 600;
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-        }
-        
-        .benefits-list {
-            list-style-type: none;
-            padding: 0;
-        }
-        
-        .benefits-list li {
-            padding: 12px 0 12px 40px;
-            position: relative;
-            border-bottom: 1px dashed #ddd;
-        }
-        
-        .benefits-list li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            top: 12px;
-            background: #4CAF50;
-            color: white;
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-        }
-        
-        .cta-button {
-            display: block;
-            width: 200px;
-            margin: 30px auto;
-            padding: 15px 25px;
-            background: linear-gradient(45deg, #FFD700, #B8860B);
-            color: #fff;
-            text-align: center;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 30px;
-            box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(184, 134, 11, 0.4);
-        }
-            /* ✅ 三图并列(电脑端) / 响应式 - 固定图片尺寸 300×50 */
-    .three-up {
-      display: grid;
-      grid-template-columns: repeat(3, 300px);
-      gap: 16px;
-      justify-content: center;
-      max-width: 1000px;
-      margin: 0 auto 22px auto;
-      padding: 8px 0;
-    }
-
-    .three-up .item {
-      box-sizing: border-box;
-    }
-
-    .three-up .item a {
-      display: block;
-      text-decoration: none;
-    }
-
-    .three-up .item img {
-      width: 300px;
-      height: 50px;
-      display: block;
-      border-radius: 6px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-      object-fit: cover;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .three-up .item img:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-
-    /* 平板设备：两列 */
-    @media (max-width: 980px) {
-      .three-up {
-        grid-template-columns: repeat(2, 300px);
-      }
-    }
-
-    /* 手机设备：单列 */
-    @media (max-width: 660px) {
-      .three-up {
-        grid-template-columns: 1fr;
-        max-width: 300px;
-      }
-    }
    </style>
 </head>
 
@@ -747,80 +552,99 @@
             </div>
         </div>
     </nav>
-    
     <section> 
-        <div class="container">
-            <p>_</p>
-            <h2 class="section-title">愿伙伴们的投资，稳健有力，一帆风顺！</h2>
-            <!-- 修复后的搜索框 -->
-            <div class="search-container">
-                <div id="pagefind-search"></div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- 主要内容区域 -->
-    <section class="content-section">
-        <h1 class="content-title">交易周边的稳赚项目</h1>
-        
-        <div class="content-body">
-            <p>在金融市场中，交易机会并非时刻都存在。当市场缺乏明确的方向或波动性较低时，明智的做法是将精力转向那些能够带来稳定收益的周边项目。</p>
-            
-            <div class="highlight-box">
-                <h3 class="highlight-title">为什么选择经验周边项目？</h3>
-                <p>相比于高风险的市场交易，经营周边项目具有以下优势：</p>
-                <ul class="benefits-list">
-                    <li>建议新手朋友以此为主，避免轻易进入市场，造成财产损失</li>
-                    <li>有助于建立长期稳定的被动收入来源</li>
-                </ul>
-            </div>
-            
-            <h3>推广奖励与返佣计划</h3>
-            <p>许多交易平台和金融服务商都提供推广奖励和返佣计划。通过推荐新用户注册并进行交易，你可以获得一定比例的佣金或奖励。这类项目的优势在于：</p>
-            
-  <div class="three-up">
-<div class="item">
-  <a href="https://blog.aibochinese.com/web3/kvb" target="_blank" rel="noopener" class="item">
-    <img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%C2%B7%E5%AE%A2%E5%9B%BE%E7%89%87%E5%BA%93/%E5%B9%BF%E5%91%8A%E8%81%94%E7%9B%9F/KVB%20ads-1.png" alt="KVB Plus" loading="lazy">
-  </a>
-</div>
-<div class="">
-  <a href="https://blog.aibochinese.com/payment/roogoo" target="_blank" rel="noopener" class="item">
-    <img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%C2%B7%E5%AE%A2%E5%9B%BE%E7%89%87%E5%BA%93/%E5%B9%BF%E5%91%8A%E8%81%94%E7%9B%9F/oogoo%20ads%202.png" alt="Roogoo Mastercard" loading="lazy">
-  </a>
-</div>
-    <div class="item">
-      <a href="https://blog.aibochinese.com/web3/binance" target="_blank" rel="noopener">
-        <img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%C2%B7%E5%AE%A2%E5%9B%BE%E7%89%87%E5%BA%93/%E5%B9%BF%E5%91%8A%E8%81%94%E7%9B%9F/%E5%B8%81%E5%AE%89%20ads-5.png" alt="Binance" loading="lazy">
-      </a>
-    </div>
-  </div>
-            
-            <h3>信号提供者订阅服务</h3>
-            <p>如果你在某个市场领域拥有专业知识或独到的分析能力，可以考虑成为信号提供者。通过提供高质量的交易信号，你可以吸引订阅者并获得盈利分成。</p>
-            
-            <ul class="benefits-list">
-                <li>注册<a href="https://blog.aibochinese.com/web3/kvb" style="color:red" target="_blank" rel="noopener noreferrer">KVB账号</a></li>
-                <li>实名认证-开通KVB 标准交易账户-账户资金满100USD-申请成为信号提供者-设置分成比例🈷️结-推广</li>
-                <li>操作教程【<a href="https://tougu.aibochinese.com/copy-trading" style="color:red" target="_blank" rel="noopener noreferrer">查看</a>】</li>
-            </ul>
-            
-            <div class="highlight-box">
-                <h3 class="highlight-title">实施建议</h3>
-                <p>为了最大化这些项目的收益，建议采取以下策略：</p>
-                <ol>
-                    <li><strong>建立个人品牌：</strong>通过社交媒体、博客或视频内容展示你的专业知识，吸引更多关注。<a href="https://blog.aibochinese.com/SMC/sm%20maketing" style="color:red" target="_blank" rel="noopener noreferrer">查看教程</a></li>
-                    <li><strong>提供高质量内容：</strong>无论是推广信息还是交易信号，都要确保内容的质量和价值。</li>
-                    <li><strong>建立长期关系：</strong>与你的推荐用户或订阅者保持良好关系，提高留存率。</li>
-                </ol>
-            </div>
-            
-            <p>在无显著交易机会时，把精力放在能稳赚不赔的工作上，通过推广奖励|返佣，以及开通信号提供者获得订阅收入，不仅能够维持资金的增值，还能为你的交易生涯增添新的收入来源。这种多元化的收入策略将使你在金融市场中更加稳健地前行。</p>
-            
-        </div>
-    </section>
+ <h1>KVB Plus App 跟单交易完整操作指南<br><small>—— 2025年11月最新版</small></h1>
 
-    <!-- 页脚（完整保留） -->
+<p>KVB跟单交易已全面升级，<strong>必须将资金从, 划转到独立的“跟单资金池”</strong>（类似子账户），才能开始复制信号提供者交易。这样设计可实现风险隔离、精准利润分成，并支持同时跟多个信号提供者。</p>
+
+<div class="highlight">
+    <h3>为什么要“划转资金”？</h3>
+    <ul>
+        <li>主账户资金 → 用于手动交易</li>
+        <li>跟单专用资金 → 只用于复制信号提供者，亏损只影响这部分</li>
+        <li>支持为不同信号提供者分别划转不同金额，形成多个独立跟单子账户</li>
+        <li>未使用的资金可随时撤回主账户</li>
+        <li>最小划转金额通常 100–500 USD（视信号提供者要求）</li>
+    </ul>
+</div>
+
+<h2>详细操作步骤（最新版，iOS / Android /Windows/MacOS通用）</h2>
+
+<ol>
+    <li><strong>下载并登录 KVB App</strong><br>
+        官网 <a href="https://35olcukwq.plusiv.com" style="color:red" target="_blank" rel="noopener noreferrer">注册账号</a>  → 新手开通Classical账户，最低入金10USDT即可</li>
+    
+    <li><strong>进入复制交易模块</strong><br>
+        底部导航 → “📶” → 点击 “复制交易”-推荐本人的信号“锦策投顾”【待建】</li>
+    
+    <li><strong>浏览并选择信号信号提供者</strong><br>
+        按收益率、最大回撤、跟单人数、存活月数等排序筛选<br>
+        点击信号提供者 → 查看详细历史曲线、交易记录、风险评分<br>
+        注意信号提供者要求：最低跟单资金、利润分成比例（通常 20%-40%）</li>
+    
+    <li><strong>设置参数并划转资金（最关键一步）</strong><br>
+        点击 “订阅 / 跟单 / Copy Now”<br>
+        设置复制模式：<br>
+        • 比例复制（推荐，系统自动按资金比例调手数）<br>
+        • 固定手数 / 固定金额（部分信号提供者支持）<br>
+        设置风控：<br>
+        • 最大仓位比例、单笔最大亏损、整体止损（如亏损30%自动停止）<br>
+        <strong>资金划转：</strong><br>
+        系统弹出 “分配跟单资金” 或 “转入复制账户”<br>
+        输入金额（如 500 USD）→ 从主账户余额直接划转（秒到、无手续费）<br>
+        如跟多个信号提供者，可为每个信号提供者单独划转</li>
+    
+    <li><strong>启动跟单</strong><br>
+        订阅成功后，系统立即实时复制（延迟通常 &lt;1秒）<br>
+        “我的跟单”页面会显示独立权益曲线、盈亏、分成等</li>
+    
+    <li><strong>日常管理与风控</strong><br>
+        • 随时暂停 / 取消订阅<br>
+        • 追加或撤回资金<br>
+        • 设置全局风控（如总回撤达一定比例自动全部停止）<br>
+        • 盈利每周/每月自动结算，信号提供者分成从盈利中扣除，剩余资金留在跟单池，可随时提现</li>
+</ol>
+
+<div class="warning">
+    <h3>成为信号提供者，拥有大量跟随订阅是交易的终极追求</h3>
+    <ul>
+        <li>KVB账户（<a href="https://35olcukwq.plusiv.com" style="color:red" target="_blank" rel="noopener noreferrer">开通</a>） 100美金即可申请成为信号提供者</li>
+        <li>利用社交媒体宣传：<a href="https://blog.aibochinese.com/SMC/sm%20maketing" style="color:red" target="_blank" rel="noopener noreferrer">教程</a> </li>
+        <li>建议：经营信号📶作为主业，而不是不断增加投入，去交易博取收益</li>
+        <li>信号案例：我的账户只投入100美金，创建信号，利润分成20%；只交易EURUSD，每次持仓0.01手，止盈止损5美金，在把握大的位置挂单交易；</li>
+        <li>信号收益案例：账号当月收益20美金；100个跟随者（部分调高了跟单比例）总共盈利$5000,该信号当月收入：20+5000*20%=$1020</li>
+        <li>优势：您在这个行业投入本金始终只有100美金，但收益确实没有上限；严于律己，打磨交易，在自己赚钱的同时，帮助他人产生稳健收益</li>
+    </ul>
+</div>
+
+<p style="text-align:center; font-size:1.1em;">
+    投资有风险，入市需谨慎。<br>
+    该渠道 <a href="https://35olcukwq.plusiv.com" style="color:red" target="_blank" rel="noopener noreferrer">开通账户</a>，享咨询服务[KVB App内会自动添加本人的私信通道]和申请IB账户权限、复制交易本人的信号📶
+</p>
+ </section>
+    <!-- Pagefind 搜索（已完美修复） -->
+    <script src="/post/pagefind/pagefind-ui.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            console.log("Initializing Pagefind search...");
+            try {
+                new PagefindUI({
+                    element: "#pagefind-search",
+                    showImages: false,
+                    showSubResults: true,
+                    resetStyles: false,
+                    translations: {
+                        placeholder: "投资标的、研报、教程..."
+                    }
+                });
+                console.log("Pagefind search initialized successfully");
+            } catch (error) {
+                console.error("Pagefind search initialization failed:", error);
+            }
+        });
+    </script>
+    </script>
+                <!-- 页脚（完整保留） -->
     <footer>
         <div class="footer">
             <p style="margin-bottom: 10px;">感谢关注:
@@ -848,6 +672,7 @@
         </div>
     </div>
 
+
     <!-- 微信浮窗 -->
     <div class="wechat-float" onclick="toggleWechatModal()">
         <div class="wechat-icon"></div>
@@ -860,28 +685,6 @@
             <button class="close-btn" onclick="closeWechatModal()">关闭</button>
         </div>
     </div>
-
-    <!-- Pagefind 搜索 -->
-    <script src="/post/pagefind/pagefind-ui.js"></script>
-    <script>
-        window.addEventListener('DOMContentLoaded', function () {
-            console.log("Initializing Pagefind search...");
-            try {
-                new PagefindUI({
-                    element: "#pagefind-search",
-                    showImages: false,
-                    showSubResults: true,
-                    resetStyles: false,
-                    translations: {
-                        placeholder: "投资标的、研报、教程..."
-                    }
-                });
-                console.log("Pagefind search initialized successfully");
-            } catch (error) {
-                console.error("Pagefind search initialization failed:", error);
-            }
-        });
-    </script>
 
     <!-- 脚本 -->
     <script>
