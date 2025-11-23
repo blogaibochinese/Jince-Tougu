@@ -17,13 +17,13 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            font-family: "Microsoft YaHei", "微软雅黑", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
             line-height: 1.6;
-            color: #ffffff;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 10px;
         }
 
         /* ========================================
@@ -207,14 +207,28 @@
             margin-top: 3rem;
         }
 
+        .footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
         .footer p {
             margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .footer a {
             color: #ffcc2f;
             text-decoration: none;
             transition: color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .footer a:hover {
@@ -506,56 +520,236 @@
            section {
             padding-top: 80px; /* 添加顶部内边距避免被固定导航栏遮挡 */
         }
-        
-        .article-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            max-width: 1200px;
+               .container {
+            max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
         }
-        .article-item {
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
             text-align: center;
-            padding: 10px;
-            border: 1px solid #ddd;
+        }
+        
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.1em;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+        
+        .content {
+            padding: 50px 40px;
+        }
+        
+        h2 {
+            font-size: 1.8em;
+            color: #667eea;
+            margin: 40px 0 25px 0;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #667eea;
+            font-weight: 600;
+        }
+        
+        h3 {
+            font-size: 1.3em;
+            color: #764ba2;
+            margin: 30px 0 15px 0;
+            font-weight: 600;
+        }
+        
+        p {
+            margin-bottom: 18px;
+            text-align: justify;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border-left: 5px solid #667eea;
+        }
+        
+        .benefit-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .benefit-list li {
+            padding: 15px 20px;
+            margin: 12px 0;
+            background: #f8f9fa;
             border-radius: 8px;
-            transition: background-color 0.3s;
+            border-left: 4px solid #764ba2;
+            transition: transform 0.3s ease;
         }
-        .article-item:hover { background-color: #f9f9f9; }
-        .article-link { text-decoration: none; color: #333; font-size: 16px; font-weight: bold; display: block; }
-        .article-link:hover { color: #007bff; }
-        @media (max-width: 768px) { 
-            .article-grid { grid-template-columns: 1fr; } 
-            
-            section {
-                padding-top: 80px; /* 移动端适配 */
-            }
+        
+        .benefit-list li:hover {
+            transform: translateX(8px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-
-        .three-up {
-            display: grid;
-            grid-template-columns: repeat(3, 300px);
-            gap: 16px;
+        
+        .benefit-list strong {
+            color: #667eea;
+            font-size: 1.1em;
+        }
+        
+        .steps {
+            counter-reset: step-counter;
+            list-style: none;
+            margin: 25px 0;
+        }
+        
+        .steps li {
+            counter-increment: step-counter;
+            padding: 20px 20px 20px 70px;
+            margin: 15px 0;
+            background: #fff;
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        
+        .steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
             justify-content: center;
-            max-width: 1000px;
-            margin: 0 auto 22px auto;
-            padding: 8px 0;
+            font-weight: bold;
+            font-size: 1.1em;
         }
-        .three-up .item img {
-            width: 300px;
-            height: 50px;
-            border-radius: 6px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-            object-fit: cover;
-            transition: all 0.2s;
+        
+        .case-study {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            padding: 20px 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        .three-up .item img:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        
+        .case-study strong {
+            color: #d63031;
+            font-size: 1.05em;
         }
-        @media (max-width: 980px) { .three-up { grid-template-columns: repeat(2, 300px); } }
-        @media (max-width: 660px) { .three-up { grid-template-columns: 1fr; max-width: 300px; } } 
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+        
+        .warning strong {
+            color: #856404;
+        }
+        
+        .tip {
+            background: #d1ecf1;
+            border-left: 5px solid #17a2b8;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .tip::before {
+            content: "💡 小贴士：";
+            font-weight: bold;
+            color: #0c5460;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 0.95em;
+        }
+        
+        .phase {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border: 2px solid #667eea;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        
+        .phase h4 {
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                border-radius: 0;
+            }
+            
+            header, .content {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+            }
+            
+            h2 {
+                font-size: 1.4em;
+            }
+            
+            .steps li {
+                padding-left: 60px;
+            }
+        } 
+ 
    </style>
 </head>
 
@@ -602,20 +796,218 @@
         </div>
     </nav>
     <section> 
-                <div class="container">
-                <h2 class="section-title">愿伙伴们的投资，稳健有力，一帆风顺！</h2>
-                            <!-- 修复后的搜索框 -->
+
+ <div class="container">
+        <header>
+            <p>_</p>
+            <h1>拥有大量订阅，是每个交易者的理想追求</h1>
+        </header>
+        
+        <div class="content">
+            <p>优秀的信号提供者，那是大浪淘沙的平台各项指标筛选出来的；而另一个不争的现实是在交易市场能稳定盈利者寥寥无几。对于绝大多数人，如果能以较低的成本跟随交易获得收益的同时，能学习信号的交易理念和方法，师承之后努力经营自己的信号，在这个领域有稳定的收入，这才是理想。</p>
+            
+            <div class="highlight-box">
+                <p><strong>想象一下：</strong>当你的信号下面躺着几百、上千个付费订阅者，每个月固定到账几万甚至几十万美元时，才会真正体会到交易的最高境界——让全世界帮你一起赚钱，同时帮助跟随者一起赚钱。不用加大自己的资金投入，比如稳定1000美金的账户，盈利就取出，努力进行订阅这个项目；收入在不断地增加，而风险固定且不断降低。</p>
+            </div>
+            
+            <p>下面我们系统拆解这个理想如何一步步实现。</p>
+            
+            <h2>一、如果您的信号有了大量订阅</h2>
+            
+            <p>拥有大量订阅，意味着交易生涯的彻底升级：</p>
+            
+            <ul class="benefit-list">
+                <li>
+                    <strong>1. 被动收入的极致</strong><br>
+                    自2020年5月FOLLOWME取消平台分成后，订阅费100%归交易员所有。
+                    <div class="case-study">
+                        <strong>真实案例：</strong><br>
+                        • 1美元/月 × 500订阅 = 月入500美元<br>
+                        • 10美元/月 × 1000订阅 = 月入10000美元<br>
+                        社区头部交易员"Resse"等人的单月订阅收入早已轻松突破5-10万美元，且这部分收入几乎零成本、纯被动。
+                    </div>
+                </li>
+                
+                <li>
+                    <strong>2. 复利式的品牌效应</strong><br>
+                    订阅人数会形成正向循环：100→500→1000→3000+，一旦进入平台首页推荐位，新订阅像滚雪球一样增长。
+                </li>
+                
+                <li>
+                    <strong>3. 从零售交易者到资产管理者的跃迁</strong><br>
+                    大量订阅只是起点，后面自然进化为MAM/资管账户，管理规模轻松破千万美元。
+                </li>
+                
+                <li>
+                    <strong>4. 真正的心理自由</strong><br>
+                    有订阅费作为"底薪"，你再也不用为了生活费重仓赌博，可以从容执行长期策略，甚至极端行情直接空仓观望。
+                </li>
+            </ul>
+<div style="text-align: center;">
+  <video controls width="300" height="180" style="max-width: 100%; height: auto;">
+    <source src="https://cf.aibochinese.com/%E8%A7%86%E9%A2%91%E7%A8%BF%E4%BB%B6/2025%E5%B9%B411%E6%9C%88/%E6%88%90%E4%B8%BA%E4%BF%A1%E5%8F%B7%E6%8F%90%E4%BE%9B%E8%80%85%EF%BC%8C%E6%98%AF%E4%BA%A4%E6%98%93%E5%91%98%E7%9A%84%E7%BB%88%E6%9E%81%E7%94%9F%E6%88%90%E6%96%B9%E6%A1%88%EF%BC%8C%E6%89%A9%E5%A4%A7%E6%94%B6%E5%85%A5%EF%BC%8C%E4%B8%8D%E5%A2%9E%E5%8A%A0%E6%8A%95%E5%85%A5/%E6%88%90%E4%B8%BA%E4%BF%A1%E5%8F%B7%E6%8F%90%E4%BE%9B%E8%80%85%EF%BC%8C%E6%98%AF%E4%BA%A4%E6%98%93%E5%91%98%E7%9A%84%E7%BB%88%E6%9E%81%E7%94%9F%E6%88%90%E6%96%B9%E6%A1%88%EF%BC%8C%E6%89%A9%E5%A4%A7%E6%94%B6%E5%85%A5%EF%BC%8C%E4%B8%8D%E5%A2%9E%E5%8A%A0%E6%8A%95%E5%85%A5.mp4" type="video/mp4">
+  </video>
+</div>
+            <div class="highlight-box">
+                <p><strong>头部交易员的真实生活：</strong>在家带娃月入几十万、在东南亚海边度假顺手调策略、组建团队运营多个信号账号……这些都不是梦，而是大量订阅带来的现实。</p>
+            </div>
+            
+            <h2>二、如何申请成为信号提供者？</h2>
+            
+            <p>2025年最新规则下，门槛已降到极低，几乎人人都能快速上手：</p>
+            
+            <h3>准备条件（基本无门槛）</h3>
+            <ul class="benefit-list">
+                <li>FOLLOWME账号</li>
+                <li>一个真实MT4/MT5账户（余额建议≥500美元）</li>
+                <div class="two-up">
+  <a href="https://blog.aibochinese.com/web3/kvb" target="_blank" rel="noopener" class="item">
+    <img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%C2%B7%E5%AE%A2%E5%9B%BE%E7%89%87%E5%BA%93/%E5%B9%BF%E5%91%8A%E8%81%94%E7%9B%9F/KVB%20ads-1.png" alt="KVB Plus" loading="lazy">
+  </a>
+  <style>
+    .two-up .item img {
+      width: 300px;
+      height: 50px;
+      display: block;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      object-fit: cover;
+    }
+  </style>
+</div>
+                <li>实名认证</li>
+            </ul>
+            
+            <h3>完整申请流程（10-30分钟搞定）</h3>
+            <ol class="steps">
+                <li>登录 → 我的账户 → 连接交易账户</li>
+                <li>输入经纪商、账户号、投资者密码</li>
+                <li>连接成功后直接进入"创建信号"</li>
+                <li>填写信号名称、简介、订阅费（初期建议0-29美元或免费）</li>
+                <li>提交审核 → 最快1小时通过</li>
+            </ol>
+            
+            <p>通过后你的信号立即出现在信号广场，可被全球90万+用户看到！</p>
+            
+            <div class="tip">
+                主流经纪商（KVB、IC Markets、XM等）都在白名单，连接成功率99%。
+            </div>
+            
+            <h2>三、新的信号提供者如何从零起步，发展？</h2>
+            
+            <p>90%的头部交易员都是从0订阅、免费信号开始的。2025年最有效的增长路径：</p>
+            
+            <div class="warning">
+                <strong>前提是：</strong>打磨交易理念和策略，稳健交易，对自己和跟随者负责
+            </div>
+            
+            <div class="phase">
+                <h4>第一阶段（0→25订阅）</h4>
+                <ul>
+                    <li>先免费</li>
+                    <li>每天发复盘帖、每周2-3次直播、回复每条留言</li>
+                    <li>外部引流：建议使用YouTube、Facebook社群等海外平台，国内对金融类帖子会封号</li>
+                </ul>
+            </div>
+            
+            <div class="phase">
+                <h4>第二阶段（25→50订阅）</h4>
+                <ul>
+                    <li>低价+新订阅者7天免费</li>
+                    <li>能发展到这一步，会有品牌效益</li>
+                </ul>
+            </div>
+            
+            <div class="phase">
+                <h4>第三阶段（50+订阅，长期维护）</h4>
+                <p>持续提供价值，保持稳定业绩，建立长期信任</p>
+            </div>
+            
+            <div class="case-study">
+                <strong>真实案例：</strong>无数2024-2025年新交易员用免费3个月破百订阅，第4个月收费后直接月入2-10万人民币。
+            </div>
+            
+            <div class="warning">
+                <strong>核心提醒：</strong>90%的订阅来自真实业绩，宣传只是加速器。严格执行，高度自律，情绪化或胡乱操作，会让您永久失去信任。【成为信号提供者，也是像请了很多的跟随者来监督，对自己交易会有帮助】
+            </div>
+            
+            <h2>四、新手如何利用社区信号赚钱以及FollowGuard的介绍</h2>
+            
+            <p>对普通用户来说，订阅优秀信号「<a href="https://www.followme.ceo/u/833933/acc/3" style="color:red" target="_blank" rel="noopener noreferrer">锦策投顾</a>」 + 严格风控 = 最接近"躺赚"的交易方式。</p>
+            
+            <h3>选信号金标准（避开90%爆仓坑）</h3>
+            <ul class="benefit-list">
+                <li>交易周期≥6个月（最好1年以上）</li>
+                <li>最大回撤<25%（顶级信号<20%）</li>
+                <li>净值曲线极度平滑、无腰斩历史</li>
+                <li>订阅人数/交易天数，数值越大越好（防止短期做数据）</li>
+                <li>订单记录无重仓、无频繁改止损</li>
+            </ul>
+            
+            <h3>必开FollowGuard风控设置（小资金推荐）</h3>
+            
+            <p>FollowGuard是FOLLOWME独有的前后端双重智能风控系统：</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>设置项目</th>
+                        <th>小资金推荐值</th>
+                        <th>作用</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>跟随方式</td>
+                        <td>固定比例</td>
+                        <td>资金增长自动加仓</td>
+                    </tr>
+                    <tr>
+                        <td>最大跟随手数</td>
+                        <td>总仓位20%-30%</td>
+                        <td>防交易员突然重仓</td>
+                    </tr>
+                    <tr>
+                        <td>净值保护</td>
+                        <td>80%-85%</td>
+                        <td>回撤到此自动暂停或平仓</td>
+                    </tr>
+                    <tr>
+                        <td>周末暂停跟随</td>
+                        <td>周五晚-周一早</td>
+                        <td>避免跳空风险</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="highlight-box">
+                <strong>后端7×24小时自动保护：</strong>
+                <ul>
+                    <li>信号中断30分钟自动平仓</li>
+                    <li>滑点异常自动处理</li>
+                    <li>漏单智能补单</li>
+                </ul>
+                <p>据平台数据，使用FollowGuard的账户平均最大回撤降低30%以上。</p>
+            </div>
+            
+            <h3>最佳实践</h3>
+            <ul class="benefit-list">
+                <li>第一次用500-3000美元小账户测试</li>
+                <li>每周复盘，盈利30%-50%后提走本金</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <p>当你既能成为被万人追随的交易员，赚取源源不断的订阅费；也能躺在优秀信号后面，借助FollowGuard稳稳获利——这才是FOLLOWME社区真正的魅力。</p>
+            </div>
+            
+            <div style="text-align: center; margin: 40px 0; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 12px;">
+                <h3 style="color: white; border: none; margin: 0 0 15px 0; padding: 0;">拥有大量订阅</h3>
+                <p style="margin: 0; font-size: 1.1em;">不是每个交易者都能做到，<br>但绝对是每一个有实力的交易者，<br>最值得穷极一生去追求的理想。</p>
+            </div>
+                          <!-- 修复后的搜索框 -->
             <div class="search-container">
                 <div id="pagefind-search"></div>
             </div>
-
-                   <div class="article-grid">
-            <div class="article-item"><a href="https://tougu.aibochinese.com/followme" class="article-link">拥有大量订阅，是每个交易者的理想追求</a></div>
-            <div class="article-item"><a href="https://blog.aibochinese.com/education/tutor%20guide" class="article-link">国际中文教师从业指南</a></div>
-            <div class="article-item"><a href="https://blog.aibochinese.com/payment/roogoo" class="article-link">Roogoo联名万事达卡，免开卡费0年费</a></div>
-            <div class="article-item"><a href="https://blog.aibochinese.com/tools/capcut" class="article-link">免费使用剪映9.0.0会员功能</a></div>
-            <div class="article-item"><a href="https://blog.aibochinese.com/tools/photoshop" class="article-link">Photoshop 2025中文破解版 下载⏬使用</a></div>
-            <div class="article-item"><a href="https://blog.aibochinese.com/sitesbuild" class="article-link">Cloudflare搭建永久免费网站</a></div>
         </div>
  </section>
     <!-- Pagefind 搜索（已完美修复） -->
@@ -644,15 +1036,15 @@
     <footer>
         <div class="footer">
             <p style="margin-bottom: 10px;">感谢关注:
-                <a href="https://www.youtube.com/@blog.aibochinese" style="color:white; display:inline-block; vertical-align:middle;" target="_blank" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%C2%B7%E5%AE%A2%E5%9B%BE%E7%89%87%E5%BA%93/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E5%9B%BE%E7%89%87/youtube%20logo%2030.png" style="width: 30px; height: 30px; display:block;" /></a>
-                <a href="https://x.com/i/communities/1992468480244019435" style="color:white; display:inline-block; vertical-align:middle;" target="_blank" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%E6%B1%89%E8%AF%AD%E5%AE%A2%E6%88%B7%E7%AB%AF/icons8-x-30.png" style="width: 30px; height: 30px; display:block;" /></a>
-                <a href="https://www.facebook.com/blog.aibochinese" style="color:white; display:inline-block; vertical-align:middle;" target="_blank" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%C2%B7%E5%AE%A2%E5%9B%BE%E7%89%87%E5%BA%93/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E5%9B%BE%E7%89%87/facebook%20log0%2030.png" style="width: 30px; height: 30px; display:block;" /></a>
-                <a href="https://wa.me/message/QXYAFEGTDWIBE1" style="color:white; display:inline-block; vertical-align:middle;" target="_blank" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%B4%A0%E6%9D%90%E7%AB%99/whatsapp-48.png" style="width: 30px; height: 30px; display:block;" /></a>
-                <a href="https://space.bilibili.com/1014631395?spm_id_from=333.1387.0.0" style="color:white; display:inline-block; vertical-align:middle;" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%B4%A0%E6%9D%90%E7%AB%99/icons8-%E8%83%86%E6%B1%81-30.png" style="width: 30px; height: 30px; display:block;" /></a>
-                <a href="https://github.com/blogaibochinese" style="color:white; display:inline-block; vertical-align:middle;" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%C2%B7%E5%AE%A2%E5%9B%BE%E7%89%87%E5%BA%93/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E5%9B%BE%E7%89%87/icons8-github-30.png" style="width: 30px; height: 30px; display:block;" /></a>
-                <a href="https://www.followme.ceo/u/833933/acc/3" style="color:white; display:inline-block; vertical-align:middle;" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%B4%A0%E6%9D%90%E7%AB%99/202511/followme%20footer%20logo.png" style="width: 30px; height: 30px; display:block;" /></a>
+                <a href="https://www.youtube.com/@blog.aibochinese" style="color:white;" target="_blank" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%C2%B7%E5%AE%A2%E5%9B%BE%E7%89%87%E5%BA%93/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E5%9B%BE%E7%89%87/youtube%20logo%2030.png" style="width: 30px; height: 30px;" /></a>
+                <a href="https://x.com/i/communities/1992468480244019435" style="color:white;" target="_blank" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%E6%B1%89%E8%AF%AD%E5%AE%A2%E6%88%B7%E7%AB%AF/icons8-x-30.png" style="width: 30px; height: 30px;" /></a>
+                <a href="https://www.facebook.com/blog.aibochinese" style="color:white;" target="_blank" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%C2%B7%E5%AE%A2%E5%9B%BE%E7%89%87%E5%BA%93/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E5%9B%BE%E7%89%87/facebook%20log0%2030.png" style="width: 30px; height: 30px;" /></a>
+                <a href="https://wa.me/message/QXYAFEGTDWIBE1" style="color:white;" target="_blank" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%B4%A0%E6%9D%90%E7%AB%99/whatsapp-48.png" style="width: 30px; height: 30px;" /></a>
+                <a href="https://space.bilibili.com/1014631395?spm_id_from=333.1387.0.0" style="color:white;" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%B4%A0%E6%9D%90%E7%AB%99/icons8-%E8%83%86%E6%B1%81-30.png" style="width: 30px; height: 30px;" /></a>
+                <a href="https://github.com/blogaibochinese" style="color:white;" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%C2%B7%E5%AE%A2%E5%9B%BE%E7%89%87%E5%BA%93/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E5%9B%BE%E7%89%87/icons8-github-30.png" style="width: 30px; height: 30px;" /></a>
+                <a href="https://www.followme.ceo/u/833933/acc/3" style="color:white;" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%B4%A0%E6%9D%90%E7%AB%99/202511/followme%20footer%20logo.png" style="width: 30px; height: 30px;" /></a>
             </p>
-            <p style="font-size: 12px; color: hsl(0, 0%, 3%);">© 2025 <a href="https://blog.aibochinese.com/" style="color:red " target="_blank" rel="noopener noreferrer">爱博·客</a> - 所有权利保留</p>
+            <p style="font-size: 15px; color: hsl(0, 0%, 100%);">© 2025 <a href="https://blog.aibochinese.com/" style="color:red " target="_blank" rel="noopener noreferrer">爱博·客</a> - 所有权利保留</p>
             <p>···</p>
         </div>
     </footer>
