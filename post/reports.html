@@ -540,6 +540,56 @@
 #pagefind-search .pagefind-ui__result-excerpt { font-size: 13.5px; color: #666; line-height: 1.5; margin-top: 4px; }
 .pagefind-ui__result-excerpt mark { background: #dbeafe; color: #1e40af; padding: 1px 3px; border-radius: 3px; }
 #pagefind-search .pagefind-ui__message { padding: 20px; text-align: center; color: #666; font-size: 14px; }
+
+       .article-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .article-item {
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+        .article-item:hover { background-color: #f9f9f9; }
+        .article-link { text-decoration: none; color: #333; font-size: 16px; font-weight: bold; display: block; }
+        .article-link:hover { color: #007bff; }
+        @media (max-width: 768px) { 
+            .article-grid { grid-template-columns: 1fr; } 
+            
+            section {
+                padding-top: 80px; /* 移动端适配 */
+            }
+        }
+
+        .three-up {
+            display: grid;
+            grid-template-columns: repeat(3, 300px);
+            gap: 16px;
+            justify-content: center;
+            max-width: 1000px;
+            margin: 0 auto 22px auto;
+            padding: 8px 0;
+        }
+        .three-up .item img {
+            width: 300px;
+            height: 50px;
+            border-radius: 6px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+            object-fit: cover;
+            transition: all 0.2s;
+        }
+        .three-up .item img:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        @media (max-width: 980px) { .three-up { grid-template-columns: repeat(2, 300px); } }
+        @media (max-width: 660px) { .three-up { grid-template-columns: 1fr; max-width: 300px; } } 
    </style>
 </head>
 
@@ -595,13 +645,22 @@
             <div id="pagefind-search"></div>
         </div>
     </div>
-
+             <div class="article-grid">
+             <div class="article-item"><a href="https://tougu.aibochinese.com/post/ETH20251124" class="article-link">ETH研报 20251124</a></div> 
+            <div class="article-item"><a href="https://tougu.aibochinese.com/post/eurusd251124" class="article-link">EURUSD研报 20251124</a></div>        
+            <div class="article-item"><a href="https://tougu.aibochinese.com/followme" class="article-link">拥有大量订阅，是每个交易者的理想追求</a></div>
+            <div class="article-item"><a href="https://blog.aibochinese.com/education/tutor%20guide" class="article-link">国际中文教师从业指南</a></div>
+            <div class="article-item"><a href="https://blog.aibochinese.com/payment/roogoo" class="article-link">Roogoo联名万事达卡，免开卡费0年费</a></div>
+            <div class="article-item"><a href="https://blog.aibochinese.com/tools/capcut" class="article-link">免费使用剪映9.0.0会员功能</a></div>
+            <div class="article-item"><a href="https://blog.aibochinese.com/tools/photoshop" class="article-link">Photoshop 2025中文破解版 下载⏬使用</a></div>
+            <div class="article-item"><a href="https://blog.aibochinese.com/sitesbuild" class="article-link">Cloudflare搭建永久免费网站</a></div>
+        </div>
     <!-- 页脚（完整保留） -->
     <footer>
         <div class="footer">
             <p style="margin-bottom: 10px;">感谢关注:
                 <a href="https://www.youtube.com/@blog.aibochinese" style="color:white; display:inline-block; vertical-align:middle;" target="_blank" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%C2%B7%E5%AE%A2%E5%9B%BE%E7%89%87%E5%BA%93/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E5%9B%BE%E7%89%87/youtube%20logo%2030.png" style="width: 30px; height: 30px; display:block;" /></a>
-                <a href="https://x.com/i/communities/1992468480244019435" style="color:white; display:inline-block; vertical-align:middle;" target="_blank" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%E6%B1%89%E8%AF%AD%E5%AE%A2%E6%88%B7%E7%AB%AF/icons8-x-30.png" style="width: 30px; height: 30px; display:block;" /></a>
+                <a href="https://x.com/i/communities/1988635370549096727" style="color:white; display:inline-block; vertical-align:middle;" target="_blank" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%E6%B1%89%E8%AF%AD%E5%AE%A2%E6%88%B7%E7%AB%AF/icons8-x-30.png" style="width: 30px; height: 30px; display:block;" /></a>
                 <a href="https://www.facebook.com/blog.aibochinese" style="color:white; display:inline-block; vertical-align:middle;" target="_blank" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%C2%B7%E5%AE%A2%E5%9B%BE%E7%89%87%E5%BA%93/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E5%9B%BE%E7%89%87/facebook%20log0%2030.png" style="width: 30px; height: 30px; display:block;" /></a>
                 <a href="https://wa.me/message/QXYAFEGTDWIBE1" style="color:white; display:inline-block; vertical-align:middle;" target="_blank" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%B4%A0%E6%9D%90%E7%AB%99/whatsapp-48.png" style="width: 30px; height: 30px; display:block;" /></a>
                 <a href="https://space.bilibili.com/1014631395?spm_id_from=333.1387.0.0" style="color:white; display:inline-block; vertical-align:middle;" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%B4%A0%E6%9D%90%E7%AB%99/icons8-%E8%83%86%E6%B1%81-30.png" style="width: 30px; height: 30px; display:block;" /></a>
