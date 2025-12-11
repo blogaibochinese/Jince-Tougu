@@ -1069,14 +1069,12 @@
             </div>
         </div>
     </nav>
-
     <!-- Hero 区域 -->
     <section class="hero">
         <div class="container">
-            <div class="hero-header">
-                <h2 class="section-title">愿伙伴们的投资，稳健有力，一帆风顺！</h2>
-            开始免费订阅我的交易信号：<a href="https://tougu.aibochinese.com/subscribe" style="color:red" target="_blank" rel="noopener noreferrer">查看</a>
-            </div>
+<div class="hero-header">
+    <h2 class="section-title">愿伙伴们的投资，稳健有力，一帆风顺！</h2>
+</div>
             <div class="hero-content">
                 <div class="windmill-container" id="windmillContainer">
                     <!-- 四叶风车（在所有设备上保持一致） -->
@@ -1104,7 +1102,6 @@
                 </div>
             </div>
         </div>
-
         <!-- 浮动信息卡片 -->
         <div class="info-card" id="infoCard">
             <button class="close-btn" id="closeBtn">&times;</button>
@@ -1112,6 +1109,17 @@
             <div class="info-description" id="infoDescription"></div>
         </div>
     </section>
+<div style="background:#FFED4E; padding:20px 30px; border-radius:16px; text-align:center; margin:30px auto; max-width:560px; box-shadow:0 6px 16px rgba(0,0,0,0.1);">
+    <p style="font-size:19px; font-weight:500; color:#000000; margin:0; display:inline;">
+        开始免费订阅我的信号
+    </p>
+    <a href="https://tougu.aibochinese.com/subscribe"
+       style="color:#ff3040; font-size:22px; font-weight:bold; text-decoration:underline; margin-left:10px;"
+       target="_blank"
+       rel="noopener noreferrer">
+        立即查看
+    </a>
+</div>
         <div class="article-grid">
             <div class="article-item"><a href="https://tougu.aibochinese.com/newest" class="article-link">最新文章</a></div>
             <div class="article-item"><a href="https://blog.aibochinese.com/education/tutor%20guide" class="article-link">国际中文教师从业指南</a></div>
@@ -1265,59 +1273,29 @@
     </script>
 
     
-    <!-- 终极链接修复解决方案 -->
+    <!-- 链接修复解决方案 -->
     <script>
-        // 终极链接修复解决方案
+        // 链接修复解决方案
         (function() {
             'use strict';
             
-            console.log('启动终极链接修复方案...');
+            console.log('启动链接修复方案...');
             
-            // 立即拦截所有链接点击事件
-            document.addEventListener('click', function(event) {
-                let target = event.target;
-                
-                // 找到最近的链接元素
-                while (target && target.tagName !== 'A') {
-                    target = target.parentElement;
-                }
-                
-                if (target && target.tagName === 'A') {
-                    const href = target.getAttribute('href');
+            // 只处理DOM加载时的链接修复，不拦截点击事件
+            function fixLink(link) {
+                const href = link.getAttribute('href');
+                if (href && href.endsWith('.html') && 
+                    !href.startsWith('/') && 
+                    !href.startsWith('http') && 
+                    !href.includes('post/')) {
                     
-                    // 检查是否是相对HTML链接且缺少post前缀
-                    if (href && href.endsWith('.html') && 
-                        !href.startsWith('/') && 
-                        !href.startsWith('http') && 
-                        !href.includes('post/')) {
-                        
-                        const newHref = '/post/' + href;
-                        console.log('即时修复链接:', href, '->', newHref);
-                        
-                        // 阻止默认行为
-                        event.preventDefault();
-                        
-                        // 修复链接
-                        target.setAttribute('href', newHref);
-                        
-                        // 立即跳转到修复后的链接
-                        window.location.href = newHref;
-                    }
+                    const newHref = '/post/' + href;
+                    console.log('修复链接:', href, '->', newHref);
+                    link.setAttribute('href', newHref);
                 }
-            }, true); // 使用捕获阶段
+            }
             
-            // 监听所有动态生成的链接
-            const observer = new MutationObserver(function(mutations) {
-                mutations.forEach(function(mutation) {
-                    mutation.addedNodes.forEach(function(node) {
-                        if (node.nodeType === 1) {
-                            // 处理新添加的元素
-                            processElement(node);
-                        }
-                    });
-                });
-            });
-            
+            // 处理单个元素
             function processElement(element) {
                 // 如果是链接元素，直接处理
                 if (element.tagName === 'A') {
@@ -1331,31 +1309,30 @@
                 }
             }
             
-            function fixLink(link) {
-                const href = link.getAttribute('href');
-                if (href && href.endsWith('.html') && 
-                    !href.startsWith('/') && 
-                    !href.startsWith('http') && 
-                    !href.includes('post/')) {
-                    
-                    const newHref = '/post/' + href;
-                    console.log('修复动态链接:', href, '->', newHref);
-                    link.setAttribute('href', newHref);
-                }
-            }
-            
-            // 开始监听DOM变化
-            observer.observe(document.body, {
-                childList: true,
-                subtree: true
-            });
-            
             // 立即处理现有页面中的所有链接
             function fixExistingLinks() {
                 const links = document.querySelectorAll('a[href*=".html"]');
                 links.forEach(fixLink);
                 console.log(`已处理 ${links.length} 个现有链接`);
             }
+            
+            // 监听所有动态生成的链接
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    mutation.addedNodes.forEach(function(node) {
+                        if (node.nodeType === 1) {
+                            // 处理新添加的元素
+                            processElement(node);
+                        }
+                    });
+                });
+            });
+            
+            // 开始监听DOM变化
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
             
             // 页面加载完成后修复现有链接
             if (document.readyState === 'loading') {
@@ -1364,10 +1341,7 @@
                 fixExistingLinks();
             }
             
-            // 定期检查和修复（备用机制）
-            setInterval(fixExistingLinks, 1000);
-            
-            console.log('终极链接修复方案已激活');
+            console.log('链接修复方案已激活');
         })();
     </script>
     <script>
