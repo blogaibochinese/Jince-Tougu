@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KVB Plus账号的优势 - 锦策投顾</title>
+    <meta name="description" content="详细介绍KVB Plus账号的优势，包括全面的投资标的、IB计划、信号提供者分红、不同类型的账户以及0手续费出入金等">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/post/pagefind/pagefind-ui.css">
+    
+    <style>
+        /* ======================================== 基础样式重置和字体设置 ======================================== */
+        @import url('https://at.alicdn.com/t/webfont_5w0j5w7k7gh.css');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", "微软雅黑", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #ffffff;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* ======================================== 固定顶部导航栏 ======================================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #FFD700, #B8860B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+        .logo h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto; /* 长度灵活，根据图片比例自动调整 */
+        }
+
+        /* 桌面端导航菜单 */
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 10px 0;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, #FFD700, #B8860B);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: #FFD700;
+        }
+
+        /* 下拉菜单 */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(0, 0, 0, 0.95);
+            min-width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: block;
+            color: #ffffff;
+            padding: 12px 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(255, 215, 0, 0.1);
+            color: #FFD700;
+        }
+
+        /* 汉堡菜单按钮 */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #ffffff;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* ======================================== 移动端样式 ======================================== */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: right 0.3s ease;
+                gap: 30px;
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-link {
+                font-size: 24px;
+            }
+
+            .dropdown-content {
+                position: static;
+                background: rgba(0, 0, 0, 0.5);
+                transform: none;
+                margin-top: 20px;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        /* ======================================== 页脚 ======================================== */
+        footer {
+            background: linear-gradient(135deg, #dce3e9, #34495e);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 15px;
+            margin-top: 3rem;
+        }
+
+        .footer p {
+            margin-bottom: 1rem;
+        }
+
+        .footer a {
+            color: #ffcc2f;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: #f38020;
+        }
+
+        .footer img {
+            margin: 0 5px;
+            vertical-align: middle;
+        }
+
+        /* 悬浮微信图标样式 */
+        .wechat-float {
+            width: 60px;
+            height: 60px;
+            background-color: hsl(148, 45%, 88%); /* 微信绿色 */
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .wechat-float:hover {
+            transform: scale(1.1);
+        }
+
+        .wechat-icon {
+            width: 40px;
+            height: 40px;
+            background-image: url('https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%C2%B7%E5%AE%A2%E5%9B%BE%E7%89%87%E5%BA%93/wechaticon.png'); /* 用户提供的微信图标URL */
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* 弹出窗样式 */
+        /* 悬浮图标容器 */
+        .float-icons-container {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .wechat-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 悬浮搜索按钮 */
+        .search-float {
+            width: 60px;
+            height: 60px;
+            background-color: #3B82F6; /* 蓝色 */
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .search-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* 搜索弹出窗 */
+        .search-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .search-popup {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .search-popup h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .wechat-popup {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            width: 90%;
+        }
+
+        .wechat-qr {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 10px;
+            display: block; /* 二维码图片，用户替换src */
+        }
+
+        .close-btn {
+            background-color: #ff4d4f;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .close-btn:hover {
+            background-color: #ff7875;
+        }
+
+        /* ==================== 全新 Pagefind 搜索样式（搜索框水平居中版） ==================== */
+        .search-container {
+            position: relative;
+            /* 删除 margin-right，改为自动左右 margin 实现居中 */
+            margin: 0 auto;           /* 关键：水平居中 */
+            z-index: 1001;
+            min-width: 200px;
+            max-width: 380px;         /* 建议加上最大宽度，和下拉结果保持一致 */
+            width: 100%;
+            display: flex;
+            justify-content: center;  /* 内部元素水平居中 */
+            align-items: center;
+        }
+
+        /* 输入框：去掉宽度 100% + focus 扩展的左右晃动问题 */
+        #pagefind-search .pagefind-ui__search-input {
+            padding: 10px 16px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            font-size: 16px;
+            /* 固定宽度，或者使用 min-width + max-width 防止晃动 */
+            width: 300px;                     /* 固定一个舒适的宽度 */
+            max-width: 100%;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            background: white;
+            color: #333;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        #pagefind-search .pagefind-ui__search-input:focus {
+            border-color: #4a6fa5;
+            box-shadow: 0 0 0 4px rgba(74, 111, 165, 0.2);
+            /* focus 时不再改变宽度，避免整个搜索框左右晃动 */
+        }
+
+        /* 下拉结果：从右对齐改为居中对齐 */
+        #pagefind-search .pagefind-ui__results {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            position: absolute;
+            top: 100%;
+            left: 50%;                        /* 关键：左边 50% */
+            transform: translateX(-50%);      /* 关键：向左偏移自身宽度的一半 → 完全居中 */
+            right: auto;                      /* 取消原来的 right: 0 */
+            width: 380px;
+            max-height: 70vh;
+            overflow-y: auto;
+            margin-top: 8px;
+            z-index: 1000;
+            padding: 8px 0;
+        }
+
+        /* 其余样式保持不变 */
+        #pagefind-search .pagefind-ui__result {
+            padding: 12px 16px;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.2s;
+        }
+        #pagefind-search .pagefind-ui__result:last-child { border-bottom: none; }
+        #pagefind-search .pagefind-ui__result:hover { background-color: #f8f9ff; }
+        #pagefind-search .pagefind-ui__result-title { font-size: 15px; font-weight: 600; color: #1f2937; margin-bottom: 4px; }
+        #pagefind-search .pagefind-ui__result-link { 
+            color: #3B82F6; 
+            text-decoration: none; 
+            display: inline-block;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+        }
+        #pagefind-search .pagefind-ui__result-link:hover { text-decoration: underline; }
+        #pagefind-search .pagefind-ui__result-excerpt { font-size: 13.5px; color: #666; line-height: 1.5; margin-top: 4px; }
+        .pagefind-ui__result-excerpt mark { background: #dbeafe; color: #1e40af; padding: 1px 3px; border-radius: 3px; }
+        #pagefind-search .pagefind-ui__message { padding: 20px; text-align: center; color: #666; font-size: 14px; }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .wechat-popup {
+                max-width: 280px;
+                padding: 25px 20px;
+            }
+            .wechat-qr {
+                width: 160px;
+                height: 160px;
+            }
+            .wechat-popup h3 {
+                font-size: 18px;
+            }
+            .wechat-popup p {
+                font-size: 13px;
+            }
+        }
+
+        /* 移动端底部导航 */
+        .mobile-nav { display: none; }
+        @media (max-width: 768px) {
+            .mobile-nav {
+                display: block;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: white;
+                box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+                z-index: 50;
+            }
+            .mobile-nav .nav-container { display: flex; justify-content: space-around; align-items: center; padding: 12px 0; }
+            .mobile-nav .nav-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; transition: all 0.3s ease; color: #666; }
+            .mobile-nav .nav-item.active { color: #3B82F6; transform: scale(1.1); }
+            .mobile-nav .nav-item .icon { font-size: 20px; margin-bottom: 4px; }
+            .mobile-nav .nav-item .text { font-size: 12px; }
+            .mobile-nav .nav-item.center {
+                background: #3B82F6;
+                color: white;
+                border-radius: 50%;
+                width: 48px;
+                height: 48px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-top: -24px;
+                box-shadow: 0 2px 10px rgba(59,130,246,0.3);
+            }
+            .mobile-nav .nav-item.center:hover { background: #2563eb; }
+        }
+
+        /* ==================== 全新 Pagefind 搜索样式（搜索框水平居中版） ==================== */
+        .search-container {
+            position: relative;
+            /* 删除 margin-right，改为自动左右 margin 实现居中 */
+            margin: 0 auto;           /* 关键：水平居中 */
+            z-index: 1001;
+            min-width: 200px;
+            max-width: 380px;         /* 建议加上最大宽度，和下拉结果保持一致 */
+            width: 100%;
+            display: flex;
+            justify-content: center;  /* 内部元素水平居中 */
+            align-items: center;
+        }
+
+        /* 输入框：去掉宽度 100% + focus 扩展的左右晃动问题 */
+        #pagefind-search .pagefind-ui__search-input {
+            padding: 10px 16px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            font-size: 16px;
+            /* 固定宽度，或者使用 min-width + max-width 防止晃动 */
+            width: 300px;                     /* 固定一个舒适的宽度 */
+            max-width: 100%;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            background: white;
+            color: #333;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        #pagefind-search .pagefind-ui__search-input:focus {
+            border-color: #4a6fa5;
+            box-shadow: 0 0 0 4px rgba(74, 111, 165, 0.2);
+            /* focus 时不再改变宽度，避免整个搜索框左右晃动 */
+        }
+
+        /* 下拉结果：从右对齐改为居中对齐 */
+        #pagefind-search .pagefind-ui__results {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            position: absolute;
+            top: 100%;
+            left: 50%;                        /* 关键：左边 50% */
+            transform: translateX(-50%);      /* 关键：向左偏移自身宽度的一半 → 完全居中 */
+            right: auto;                      /* 取消原来的 right: 0 */
+            width: 380px;
+            max-height: 70vh;
+            overflow-y: auto;
+            margin-top: 8px;
+            z-index: 1000;
+            padding: 8px 0;
+        }
+
+        /* 其余样式保持不变 */
+        #pagefind-search .pagefind-ui__result {
+            padding: 12px 16px;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.2s;
+        }
+        #pagefind-search .pagefind-ui__result:last-child { border-bottom: none; }
+        #pagefind-search .pagefind-ui__result:hover { background-color: #f8f9ff; }
+        #pagefind-search .pagefind-ui__result-title { font-size: 15px; font-weight: 600; color: #1f2937; margin-bottom: 4px; }
+        #pagefind-search .pagefind-ui__result-link { 
+            color: #3B82F6; 
+            text-decoration: none; 
+            display: inline-block;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+        }
+        #pagefind-search .pagefind-ui__result-link:hover { text-decoration: underline; }
+        #pagefind-search .pagefind-ui__result-excerpt { font-size: 13.5px; color: #666; line-height: 1.5; margin-top: 4px; }
+        .pagefind-ui__result-excerpt mark { background: #dbeafe; color: #1e40af; padding: 1px 3px; border-radius: 3px; }
+        #pagefind-search .pagefind-ui__message { padding: 20px; text-align: center; color: #666; font-size: 14px; }
+
+        /* ======================================== 内容区域样式 ======================================== */
+        .content {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f172a 0%, #000000 100%);
+            padding: 120px 20px 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            background: linear-gradient(45deg, #FFD700, #B8860B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .content-section {
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .content-section h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #FFD700;
+        }
+
+        .content-section h3 {
+            font-size: 20px;
+            font-weight: 500;
+            margin: 20px 0 15px;
+            color: #ffffff;
+        }
+
+        .content-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: #e2e8f0;
+        }
+
+        .content-section ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .content-section li {
+            margin-bottom: 10px;
+            color: #e2e8f0;
+        }
+
+        /* 移动端内容适配 */
+        @media (max-width: 768px) {
+            .content {
+                padding: 100px 15px 80px;
+            }
+
+            .content-title {
+                font-size: 28px;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            .content-section h2 {
+                font-size: 20px;
+            }
+
+            .content-section h3 {
+                font-size: 18px;
+            }
+
+            .content-section p {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 固定导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h2><a href="https://tougu.aibochinese.com/" target="_blank">
+                    <img src="https://cf.aibochinese.com/%E7%B4%A0%E6%9D%90%E7%AB%99/202511/tougu%20logo.png" alt="网站Logo">
+                </a></h2>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">推荐平台 ▼</a>
+                    <div class="dropdown-content">
+                        <a href="https://blog.aibochinese.com/web3/kvb" class="dropdown-item">KVB plus</a>
+                        <a href="https://blog.aibochinese.com/web3/binance" class="dropdown-item">币安</a>
+                        <a href="https://blog.aibochinese.com/payment/roogoo" class="dropdown-item">Roogoo联名万事达卡</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="https://tougu.aibochinese.com/forex" class="nav-link">外汇</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://tougu.aibochinese.com/stock-index" class="nav-link">股指</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://tougu.aibochinese.com/commodities" class="nav-link">大宗商品</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://tougu.aibochinese.com/crypto" class="nav-link">加密货币</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://tougu.aibochinese.com/transfer" class="nav-link">出入金</a>
+                </li>
+            </ul>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 内容区域 -->
+    <div class="content">
+        <h1 class="content-title">KVB Plus账号的优势</h1>
+
+        <div class="content-section">
+            <h2>一、全面的投资标的</h2>
+            <p>外汇、贵金属、大宗商品、股指、美港股和加密货币等  |  <a href="https://35olcukwq.plusiv.com" style="color:red" target="_blank" rel="noopener noreferrer">点击开通</a></p>
+        </div>
+        
+        <div class="content-section">
+            <h2>二、适配我们的经营理念</h2>
+            <h3>IB计划</h3>
+            <p>成为介绍经纪商，获取丰厚的佣金回报。</p>
+            
+            <h3>成为信号提供者-获取分红</h3>
+            <p>分享您的交易策略，成为信号提供者，获取订阅分红。</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>三、可开不同类型的账户</h2>
+            <h3>标准账户：最低入金10美金即可参与交易</h3>
+            <p>适合初学者和小额投资者，提供灵活的交易条件。</p>
+            
+            <h3>超低点差账户：专业大资金交易</h3>
+            <p>为专业交易者和大资金客户设计，提供极具竞争力的点差和高级交易功能。</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>四：0手续费出入金；多种渠道</h2>
+            <p>提供多种便捷的出入金方式，0手续费，快速到账。</p>
+            
+            <h3>推荐Binance Pay: 可最低10美金进出</h3>
+            <p>Binance Pay支持最低10美金的出入金，操作简单，安全可靠。</p>
+        </div>
+    </div>
+
+    <!-- 页脚（完整保留） -->
+    <footer>
+        <div class="footer">
+            <p style="margin-bottom: 10px;">感谢关注:
+                <a href="https://www.youtube.com/@blog.aibochinese" style="color:white; display:inline-block; vertical-align:middle;" target="_blank" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%C2%B7%E5%AE%A2%E5%9B%BE%E7%89%87%E5%BA%93/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E5%9B%BE%E7%89%87/youtube%20logo%2030.png" style="width: 30px; height: 30px; display:block;" /></a>
+                <a href="https://x.com/i/communities/1992468480244019435" style="color:white; display:inline-block; vertical-align:middle;" target="_blank" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%E6%B1%89%E8%AF%AD%E5%AE%A2%E6%88%B7%E7%AB%AF/icons8-x-30.png" style="width: 30px; height: 30px; display:block;" /></a>
+                <a href="https://www.facebook.com/blog.aibochinese" style="color:white; display:inline-block; vertical-align:middle;" target="_blank" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%C2%B7%E5%AE%A2%E5%9B%BE%E7%89%87%E5%BA%93/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E5%9B%BE%E7%89%87/facebook%20log0%2030.png" style="width: 30px; height: 30px; display:block;" /></a>
+                <a href="https://wa.me/message/QXYAFEGTDWIBE1" style="color:white; display:inline-block; vertical-align:middle;" target="_blank" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%B4%A0%E6%9D%90%E7%AB%99/whatsapp-48.png" style="width: 30px; height: 30px; display:block;" /></a>
+                <a href="https://space.bilibili.com/1014631395?spm_id_from=333.1387.0.0" style="color:white; display:inline-block; vertical-align:middle;" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%B4%A0%E6%9D%90%E7%AB%99/icons8-%E8%83%86%E6%B1%81-30.png" style="width: 30px; height: 30px; display:block;" /></a>
+                <a href="https://github.com/blogaibochinese" style="color:white; display:inline-block; vertical-align:middle;" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%C2%B7%E5%AE%A2%E5%9B%BE%E7%89%87%E5%BA%93/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E5%9B%BE%E7%89%87/icons8-github-30.png" style="width: 30px; height: 30px; display:block;" /></a>
+                <a href="https://www.followme.ceo/u/833933/acc/3" style="color:white; display:inline-block; vertical-align:middle;" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%B4%A0%E6%9D%90%E7%AB%99/202511/followme%20footer%20logo.png" style="width: 30px; height: 30px; display:block;" /></a>
+            </p>
+            <p style="font-size: 12px; color: hsl(0, 0%, 3%);">© 2025 <a href="https://blog.aibochinese.com/" style="color:red " target="_blank" rel="noopener noreferrer">爱博·客</a> - 所有权利保留</p>
+            <p>···</p>
+        </div>
+    </footer>
+
+    <!-- 移动端底部导航 -->
+    <div class="mobile-nav">
+        <div class="nav-container">
+            <a href="https://tougu.aibochinese.com/" class="nav-item active"><i class="fas fa-home icon"></i><span class="text">首页</span></a>
+            <a href="https://tougu.aibochinese.com/strategy" class="nav-item"><i class="fas fa-map"></i><span class="text">策略</span></a>
+            <a href="https://tougu.aibochinese.com/newest" class="nav-item center"><i class="fas fa-sync-alt icon"></i><span class="text">最新</span></a>
+            <a href="https://tougu.aibochinese.com/reports" class="nav-item"><i class="fas fa-chart-line"></i><span class="text">研报</span></a>
+            <a href="https://tougu.aibochinese.com/sure-win" class="nav-item"><i class="fas fa-dollar-sign icon"></i><span class="text">淘金</span></a>
+        </div>
+    </div>
+
+    <!-- 脚本 -->
+    </script>
+    <!-- 悬浮图标容器 -->
+    <div class="float-icons-container">
+        <!-- 悬浮微信客服图标 -->
+        <div class="wechat-float" onclick="toggleWechatModal()">
+            <div class="wechat-icon"></div>
+        </div>
+        
+        <!-- 悬浮搜索按钮 -->
+        <div class="search-float" onclick="toggleSearchModal()">
+            <i class="fa fa-search text-white text-2xl"></i>
+        </div>
+    </div>
+
+    <!-- 搜索弹出窗 -->
+    <div id="searchModal" class="search-modal" onclick="closeSearchModal(event)">
+        <div class="search-popup" onclick="event.stopPropagation()">
+            <h3>搜索内容</h3>
+            <div id="pagefind-search-popup"></div>
+            <button class="close-btn" onclick="closeSearchModal()">关闭</button>
+        </div>
+    </div>
+
+    <!-- 微信弹出窗 -->
+    <div id="wechatModal" class="wechat-modal" onclick="closeWechatModal(event)">
+        <div class="wechat-popup" onclick="event.stopPropagation()">
+            <h3>微信客服</h3>
+            <img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%C2%B7%E5%AE%A2%E5%9B%BE%E7%89%87%E5%BA%93/%E6%B7%BB%E5%8A%A0%E5%BE%AE%E4%BF%A1.png" alt="微信二维码" class="wechat-qr">
+            <p>扫描添加客服微信</p>
+            <button class="close-btn" onclick="closeWechatModal()">关闭</button>
+        </div>
+    </div>
+
+    <script>
+        // 搜索弹窗控制函数
+        function toggleSearchModal() {
+            const modal = document.getElementById('searchModal');
+            modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function closeSearchModal(event) {
+            document.getElementById('searchModal').style.display = 'none';
+        }
+
+        // 微信弹窗控制函数
+        function toggleWechatModal() {
+            const modal = document.getElementById('wechatModal');
+            modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function closeWechatModal(event) {
+            document.getElementById('wechatModal').style.display = 'none';
+        }
+
+        // 点击模态背景关闭
+        window.onclick = function(event) {
+            const searchModal = document.getElementById('searchModal');
+            const wechatModal = document.getElementById('wechatModal');
+            
+            if (event.target === searchModal) {
+                closeSearchModal();
+            } else if (event.target === wechatModal) {
+                closeWechatModal();
+            }
+        };
+    </script>
+    <!-- Pagefind 搜索（已完美修复） -->
+    <script src="/post/pagefind/pagefind-ui.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            console.log("Initializing Pagefind search...");
+            try {
+                // 初始化页面顶部搜索框
+                new PagefindUI({
+                    element: "#pagefind-search",
+                    showImages: false,
+                    showSubResults: true,
+                    resetStyles: false,
+                    translations: {
+                        placeholder: "🔍资源、教程、工具..."
+                    }
+                });
+                
+                // 初始化右侧悬浮搜索弹窗
+                new PagefindUI({
+                    element: "#pagefind-search-popup",
+                    showImages: false,
+                    showSubResults: true,
+                    resetStyles: false,
+                    translations: {
+                        placeholder: "投资标的、研报、教程..."
+                    }
+                });
+                
+                console.log("Pagefind search initialized successfully");
+            } catch (error) {
+                console.error("Pagefind search initialization failed:", error);
+            }
+        });
+    </script>
+
+    <script>
+
+        // 移动端导航与汉堡菜单
+        document.addEventListener('DOMContentLoaded', function() {
+            const navItems = document.querySelectorAll('.mobile-nav .nav-item:not(.center)');
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    navItems.forEach(i => i.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+
+    
+    <!-- 链接修复解决方案 -->
+    <script>
+        // 链接修复解决方案
+        (function() {
+            'use strict';
+            
+            console.log('启动链接修复方案...');
+            
+            // 只处理DOM加载时的链接修复，不拦截点击事件
+            function fixLink(link) {
+                const href = link.getAttribute('href');
+                if (href && href.endsWith('.html') && 
+                    !href.startsWith('/') && 
+                    !href.startsWith('http') && 
+                    !href.includes('post/')) {
+                    
+                    const newHref = '/post/' + href;
+                    console.log('修复链接:', href, '->', newHref);
+                    link.setAttribute('href', newHref);
+                }
+            }
+            
+            // 处理单个元素
+            function processElement(element) {
+                // 如果是链接元素，直接处理
+                if (element.tagName === 'A') {
+                    fixLink(element);
+                }
+                
+                // 如果包含子元素，递归处理
+                if (element.querySelectorAll) {
+                    const links = element.querySelectorAll('a[href*=".html"]');
+                    links.forEach(fixLink);
+                }
+            }
+            
+            // 立即处理现有页面中的所有链接
+            function fixExistingLinks() {
+                const links = document.querySelectorAll('a[href*=".html"]');
+                links.forEach(fixLink);
+                console.log(`已处理 ${links.length} 个现有链接`);
+            }
+            
+            // 监听所有动态生成的链接
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    mutation.addedNodes.forEach(function(node) {
+                        if (node.nodeType === 1) {
+                            // 处理新添加的元素
+                            processElement(node);
+                        }
+                    });
+                });
+            });
+            
+            // 开始监听DOM变化
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
+            
+            // 页面加载完成后修复现有链接
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', fixExistingLinks);
+            } else {
+                fixExistingLinks();
+            }
+            
+            console.log('链接修复方案已激活');
+        })();
+    </script>
+    <script>
+        // ======================================== 导航栏滚动效果 ========================================
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ======================================== 移动端菜单切换 ========================================
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            // 点击菜单项时关闭移动端菜单
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
