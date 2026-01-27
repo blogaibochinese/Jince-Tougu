@@ -239,11 +239,37 @@
         .hero-content {
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        /* 右侧公告栏样式 */
+        .Notify-content {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+
+        .Notify-content p {
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+
+        .Notify-content a {
+            color: hsl(0, 96%, 49%);
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .Notify-content a:hover {
+            color: hsl(0, 96%, 60%);
         }
 
         /* 金十数据容器 */
@@ -1105,9 +1131,13 @@
                     </div>
                 </div>
                 <!-- 数据iframe - 仅在桌面端显示 -->
-                <div class="jinshi-data">
-                 <iframe src="https://www.mql5.com/en/economic-calendar/widget" width="100%" height="500" frameborder="0"></iframe>
-                </div>
+                <div class="Notify-content">
+                <p>2026年大陆个人打通全球投资渠道-最优解：<a href="https://cf.aibochinese.com/%E9%94%A6%E7%AD%96%E6%8A%95%E9%A1%BE/global-invest.png" style="color:hsl(0, 96%, 49%)" target="_blank" rel="noopener noreferrer">图谱</a></p>
+                <p>受邀（可联系我开通佣金账户）渠道注册：</p>
+                <p>开通：<a href="https://blog.aibochinese.com/payment/pinkwallet" style="color:hsl(0, 96%, 49%)" target="_blank" rel="noopener noreferrer">PinkWallet</a></p>
+                <p>开通：<a href="https://blog.aibochinese.com/web3/binance" style="color:hsl(0, 96%, 49%)" target="_blank" rel="noopener noreferrer">Binance Pay</a></p>
+                <p>开通：<a href="https://blog.aibochinese.com/web3/kvb" style="color:hsl(0, 96%, 49%)" target="_blank" rel="noopener noreferrer">KVB Plus</a></p>
+            </div>
             </div>
         </div>
         <!-- 浮动信息卡片 -->
