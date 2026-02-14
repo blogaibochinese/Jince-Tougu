@@ -1,7 +1,6 @@
 # Cloudflare Pages重定向规则
 # 禁用SPA模式，不将404重定向到index.html
 # 对于所有路径，保持原样，不重定向
-/* /:splat 200
 
 # 对于不存在的文件，返回404
 # Cloudflare Pages默认会处理404，不需要额外配置
