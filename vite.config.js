@@ -23,6 +23,24 @@ export default defineConfig({
             type: 'image/jpeg'
           }
         ]
+      },
+      workbox: {
+        navigateFallbackDenylist: [
+          /^\/forex$/,
+          /^\/stock-index$/,
+          /^\/commondities$/,
+          /^\/crypto$/,
+          /^\/transfer$/,
+          /^\/risk-control$/,
+          /^\/reports$/,
+          /^\/strategy$/,
+          /^\/sure-win$/,
+          /^\/newest$/,
+          /^\/subscribe$/,
+          /^\/binance\//,
+          /^\/kvb\//,
+          /^\/post\//
+        ]
       }
     })
   ]
