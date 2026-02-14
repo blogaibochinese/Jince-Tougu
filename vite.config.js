@@ -2,6 +2,26 @@ import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      input: {
+        index: 'index.html',
+        forex: 'forex.html',
+        crypto: 'crypto.html',
+        commodities: 'commondities.html',
+        'stock-index': 'stock-index.html',
+        transfer: 'transfer.html',
+        'risk-control': 'risk-control.html',
+        reports: 'reports.html',
+        strategy: 'strategy.html',
+        'sure-win': 'sure-win.html',
+        newest: 'newest.html',
+        subscribe: 'subscribe.html',
+        'copy-trading': 'copy-trading.html',
+        followme: 'followme.html'
+      }
+    }
+  },
   plugins: [
     VitePWA({
       registerType: 'autoUpdate',
