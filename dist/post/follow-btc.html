@@ -6,20 +6,18 @@
     <title>BTC项目-让您在Binance轻松跟随我的数字资产管理操作</title>
     <link rel="icon" type="image/png" href="https://cf.aibochinese.com/%E9%94%A6%E7%AD%96%E6%8A%95%E9%A1%BE/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20251212072309_96_19.jpg" sizes="16x16">
     <meta name="description" content="提供专业的投资咨询服务，免费的投资交易课程，可查看投资建议和研报，并可以免费订阅我的交易信号">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="/post/pagefind/pagefind-ui.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
+@import url('https://at.alicdn.com/t/webfont_5w0j5w7k7gh.css');
         /* ========================================
            基础样式重置和字体设置
         ======================================== */
-@import url('https://at.alicdn.com/t/webfont_5w0j5w7k7gh.css');
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: "Microsoft YaHei", "微软雅黑", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
@@ -28,7 +26,6 @@
             scroll-behavior: smooth;
             background: linear-gradient(135deg, #0f172a 0%, #000000 100%);
         }
-
         /* ========================================
            固定顶部导航栏
         ======================================== */
@@ -42,13 +39,11 @@
             transition: all 0.3s ease;
             background: transparent;
         }
-
         .navbar.scrolled {
             background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
         }
-
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -57,7 +52,6 @@
             align-items: center;
             padding: 0 20px;
         }
-
         .logo {
             font-size: 28px;
             font-weight: 700;
@@ -72,23 +66,19 @@
     font-size: 1.8rem;
     font-weight: bold;
 }
-
-.logo img {
+        .logo img {
     height: 50px;
     width: auto; /* 长度灵活，根据图片比例自动调整 */
 }
-
         /* 桌面端导航菜单 */
         .nav-menu {
             display: flex;
             list-style: none;
             gap: 30px;
         }
-
         .nav-item {
             position: relative;
         }
-
         .nav-link {
             color: #ffffff;
             text-decoration: none;
@@ -98,7 +88,6 @@
             position: relative;
             transition: all 0.3s ease;
         }
-
         .nav-link::after {
             content: '';
             position: absolute;
@@ -110,20 +99,16 @@
             transition: all 0.3s ease;
             transform: translateX(-50%);
         }
-
         .nav-link:hover::after {
             width: 100%;
         }
-
         .nav-link:hover {
             color: #FFD700;
         }
-
         /* 下拉菜单 */
         .dropdown {
             position: relative;
         }
-
         .dropdown-content {
             position: absolute;
             top: 100%;
@@ -139,13 +124,11 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 215, 0, 0.2);
         }
-
         .dropdown:hover .dropdown-content {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
-
         .dropdown-item {
             display: block;
             color: #ffffff;
@@ -154,16 +137,13 @@
             transition: all 0.3s ease;
             border-bottom: 1px solid rgba(255, 215, 0, 0.1);
         }
-
         .dropdown-item:last-child {
             border-bottom: none;
         }
-
         .dropdown-item:hover {
             background: rgba(255, 215, 0, 0.1);
             color: #FFD700;
         }
-
         /* 汉堡菜单按钮 */
         .hamburger {
             display: none;
@@ -171,7 +151,6 @@
             cursor: pointer;
             padding: 5px;
         }
-
         .hamburger span {
             width: 25px;
             height: 3px;
@@ -179,26 +158,21 @@
             margin: 3px 0;
             transition: 0.3s;
         }
-
         .hamburger.active span:nth-child(1) {
             transform: rotate(-45deg) translate(-5px, 6px);
         }
-
         .hamburger.active span:nth-child(2) {
             opacity: 0;
         }
-
         .hamburger.active span:nth-child(3) {
             transform: rotate(45deg) translate(-5px, -6px);
         }
-
         /* 主要内容区域样式 */
         .main-content {
             padding: 100px 20px 50px;
             max-width: 1200px;
             margin: 0 auto;
         }
-
         /* 两栏布局 */
         .two-column-layout {
             display: grid;
@@ -206,7 +180,6 @@
             gap: 30px;
             margin-bottom: 50px;
         }
-
         /* 左侧栏样式 */
         .left-column {
             background: rgba(0, 0, 0, 0.8);
@@ -216,7 +189,6 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 215, 0, 0.2);
         }
-
         /* 右侧栏样式 */
         .right-column {
             background: rgba(0, 0, 0, 0.8);
@@ -226,7 +198,6 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 215, 0, 0.2);
         }
-
         /* 标题样式 */
         .main-title {
             font-size: 28px;
@@ -238,7 +209,6 @@
             margin-bottom: 30px;
             text-align: center;
         }
-
         .section-title {
             font-size: 22px;
             font-weight: 600;
@@ -247,7 +217,6 @@
             border-bottom: 1px solid rgba(255, 215, 0, 0.3);
             padding-bottom: 10px;
         }
-
         /* 文本样式 */
         .content-text {
             font-size: 16px;
@@ -255,7 +224,6 @@
             margin-bottom: 25px;
             color: #e2e8f0;
         }
-
         /* 按钮样式 */
         .btn {
             display: inline-block;
@@ -269,27 +237,22 @@
             width: 100%;
             text-align: center;
         }
-
         .btn-yellow {
             background: linear-gradient(45deg, #FFD700, #B8860B);
             color: #000;
         }
-
         .btn-yellow:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
         }
-
         .btn-blue {
             background: linear-gradient(45deg, #3B82F6, #1E40AF);
             color: #fff;
         }
-
         .btn-blue:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
         }
-
         /* 注意事项样式 */
         .note {
             background: rgba(220, 38, 38, 0.1);
@@ -300,7 +263,6 @@
             font-size: 14px;
             color: #f87171;
         }
-
         /* 图片样式 */
         .performance-image {
             max-width: 100%;
@@ -308,7 +270,6 @@
             border-radius: 10px;
             margin: 20px 0;
         }
-
         /* 数据更新日期样式 */
         .update-date {
             text-align: center;
@@ -316,7 +277,6 @@
             color: #94a3b8;
             margin-top: 15px;
         }
-
         /* 视频讲解区样式 */
         .video-section {
             background: rgba(0, 0, 0, 0.8);
@@ -327,7 +287,6 @@
             border: 1px solid rgba(255, 215, 0, 0.2);
             margin-bottom: 50px;
         }
-
         .video-container {
             position: relative;
             padding-bottom: 56.25%;
@@ -336,7 +295,6 @@
             border-radius: 10px;
             margin-top: 20px;
         }
-
         .video-container iframe {
             position: absolute;
             top: 0;
@@ -344,7 +302,6 @@
             width: 100%;
             height: 100%;
         }
-
         /* 移动端适配 */
         @media (max-width: 768px) {
             .two-column-layout {
@@ -387,7 +344,6 @@
                 visibility: visible;
             }
         }
-
         /* 页脚 */
         footer {
             background: linear-gradient(135deg, #dce3e9, #34495e);
@@ -397,26 +353,22 @@
             border-radius: 15px;
             margin-top: 3rem;
         }
-
         .footer p {
             margin-bottom: 1rem;
         }
-
         .footer a {
             color: #ffcc2f;
             text-decoration: none;
             transition: color 0.3s;
         }
-
         .footer a:hover {
             color: #f38020;
         }
-
         .footer img {
             margin: 0 5px;
             vertical-align: middle;
         }
-       /* 悬浮微信图标样式 */
+        /* 悬浮微信图标样式 */
         .wechat-float {
             width: 60px;
             height: 60px;
@@ -429,11 +381,9 @@
             justify-content: center;
             transition: transform 0.3s ease;
         }
-
         .wechat-float:hover {
             transform: scale(1.1);
         }
-
         .wechat-icon {
             width: 40px;
             height: 40px;
@@ -441,7 +391,6 @@
             background-size: cover;
             background-position: center;
         }
-
         /* 弹出窗样式 */
         /* 悬浮图标容器 */
         .float-icons-container {
@@ -454,7 +403,6 @@
             flex-direction: column;
             gap: 15px;
         }
-
         .wechat-modal {
             display: none;
             position: fixed;
@@ -467,7 +415,6 @@
             justify-content: center;
             align-items: center;
         }
-
         /* 悬浮搜索按钮 */
         .search-float {
             width: 60px;
@@ -481,11 +428,9 @@
             justify-content: center;
             transition: transform 0.3s ease;
         }
-
         .search-float:hover {
             transform: scale(1.1);
         }
-
         /* 搜索弹出窗 */
         .search-modal {
             display: none;
@@ -499,7 +444,6 @@
             justify-content: center;
             align-items: center;
         }
-
         .search-popup {
             background-color: white;
             border-radius: 10px;
@@ -509,12 +453,10 @@
             max-width: 500px;
             width: 90%;
         }
-
         .search-popup h3 {
             margin-bottom: 15px;
             color: #333;
         }
-
         .wechat-popup {
             background-color: white;
             border-radius: 10px;
@@ -524,14 +466,12 @@
             max-width: 300px;
             width: 90%;
         }
-
         .wechat-qr {
             width: 200px;
             height: 200px;
             margin: 0 auto 10px;
             display: block; /* 二维码图片，用户替换src */
         }
-
         .close-btn {
             background-color: #ff4d4f;
             color: white;
@@ -541,13 +481,11 @@
             cursor: pointer;
             margin-top: 15px;
         }
-
         .close-btn:hover {
             background-color: #ff7875;
         }
-
         /* ==================== 全新 Pagefind 搜索样式（搜索框水平居中版） ==================== */
-.search-container {
+        .search-container {
     position: relative;
     /* 删除 margin-right，改为自动左右 margin 实现居中 */
     margin: 0 auto;           /* 关键：水平居中 */
@@ -559,9 +497,8 @@
     justify-content: center;  /* 内部元素水平居中 */
     align-items: center;
 }
-
-/* 输入框：去掉宽度 100% + focus 扩展的左右晃动问题 */
-#pagefind-search .pagefind-ui__search-input {
+        /* 输入框：去掉宽度 100% + focus 扩展的左右晃动问题 */
+        #pagefind-search .pagefind-ui__search-input {
     padding: 10px 16px;
     border: 2px solid #ddd;
     border-radius: 25px;
@@ -575,15 +512,13 @@
     box-sizing: border-box;
     outline: none;
 }
-
-#pagefind-search .pagefind-ui__search-input:focus {
+        #pagefind-search .pagefind-ui__search-input:focus {
     border-color: #4a6fa5;
     box-shadow: 0 0 0 4px rgba(74, 111, 165, 0.2);
     /* focus 时不再改变宽度，避免整个搜索框左右晃动 */
 }
-
-/* 下拉结果：从右对齐改为居中对齐 */
-#pagefind-search .pagefind-ui__results {
+        /* 下拉结果：从右对齐改为居中对齐 */
+        #pagefind-search .pagefind-ui__results {
     background: white;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -600,17 +535,16 @@
     z-index: 1000;
     padding: 8px 0;
 }
-
-/* 其余样式保持不变 */
-#pagefind-search .pagefind-ui__result {
+        /* 其余样式保持不变 */
+        #pagefind-search .pagefind-ui__result {
     padding: 12px 16px;
     border-bottom: 1px solid #eee;
     transition: background-color 0.2s;
 }
-#pagefind-search .pagefind-ui__result:last-child { border-bottom: none; }
-#pagefind-search .pagefind-ui__result:hover { background-color: #f8f9ff; }
-#pagefind-search .pagefind-ui__result-title { font-size: 15px; font-weight: 600; color: #1f2937; margin-bottom: 4px; }
-#pagefind-search .pagefind-ui__result-link { 
+        #pagefind-search .pagefind-ui__result:last-child { border-bottom: none; }
+        #pagefind-search .pagefind-ui__result:hover { background-color: #f8f9ff; }
+        #pagefind-search .pagefind-ui__result-title { font-size: 15px; font-weight: 600; color: #1f2937; margin-bottom: 4px; }
+        #pagefind-search .pagefind-ui__result-link { 
     color: #3B82F6; 
     text-decoration: none; 
     display: inline-block;
@@ -618,11 +552,10 @@
     position: relative;
     z-index: 10;
 }
-#pagefind-search .pagefind-ui__result-link:hover { text-decoration: underline; }
-#pagefind-search .pagefind-ui__result-excerpt { font-size: 13.5px; color: #666; line-height: 1.5; margin-top: 4px; }
-.pagefind-ui__result-excerpt mark { background: #dbeafe; color: #1e40af; padding: 1px 3px; border-radius: 3px; }
-#pagefind-search .pagefind-ui__message { padding: 20px; text-align: center; color: #666; font-size: 14px; }
-
+        #pagefind-search .pagefind-ui__result-link:hover { text-decoration: underline; }
+        #pagefind-search .pagefind-ui__result-excerpt { font-size: 13.5px; color: #666; line-height: 1.5; margin-top: 4px; }
+        .pagefind-ui__result-excerpt mark { background: #dbeafe; color: #1e40af; padding: 1px 3px; border-radius: 3px; }
+        #pagefind-search .pagefind-ui__message { padding: 20px; text-align: center; color: #666; font-size: 14px; }
         @keyframes slideIn {
             from {
                 opacity: 0;
@@ -633,7 +566,6 @@
                 transform: translateY(0) scale(1);
             }
         }
-
         /* 移动端适配 */
         @media (max-width: 768px) {
             .wechat-popup {
@@ -651,7 +583,6 @@
                 font-size: 13px;
             }
         }
-
         /* 移动端底部导航 */
         .mobile-nav { display: none; }
         @media (max-width: 768px) {
@@ -686,7 +617,8 @@
             .mobile-nav .nav-item.center:hover { background: #2563eb; }
         }
     </style>
-</head>
+  <link rel="stylesheet" crossorigin href="/assets/pagefind-ui-CXOjeUv_.css">
+<link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
 <body>
     <!-- 固定导航栏 -->
     <nav class="navbar" id="navbar">
