@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure Gold (AGLD) 深度调研报告</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            padding-left: 10px;
+            border-left: 5px solid #3498db;
+            font-size: 1.8em;
+        }
+        h3 {
+            color: #16a085;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 0 10px rgba(0,0,0,0.03);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f8ff;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .highlight-box {
+            background-color: #e8f4fc;
+            border-left: 5px solid #3498db;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .warning-box {
+            background-color: #fff8e6;
+            border-left: 5px solid #f39c12;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .data-point {
+            display: inline-block;
+            background-color: #eef7ff;
+            padding: 8px 15px;
+            margin: 5px 10px 5px 0;
+            border-radius: 6px;
+            font-weight: 600;
+            color: #2c3e50;
+            border: 1px solid #cce5ff;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #d5edff;
+            color: #0066cc;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        .footer-note {
+            text-align: center;
+            margin-top: 40px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            table {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Adventure Gold (AGLD) 深度调研报告</h1>
+        <p><strong>报告日期：</strong>2026年2月23日（基于截至2026年2月22日的数据与分析）</p>
+
+        <h2>一、项目基本面概览</h2>
+        <p>Adventure Gold（AGLD）是基于以太坊的ERC-20代币，作为现象级NFT项目Loot的核心经济与治理代币诞生，旨在激励和治理“Loot宇宙”（Lootverse）生态系统。</p>
+
+        <h3>代币发行与核心分配</h3>
+        <ul>
+            <li><strong>发行日期：</strong>2021年9月2日。</li>
+            <li><strong>发行方式：</strong>100%公平空投给Loot NFT持有者（每个NFT可申领10,000 AGLD）。</li>
+            <li><strong>最大供应量：</strong>80,000,000枚（8000万枚），固定无增发。</li>
+            <li><strong>流通供应量：</strong>已超过90%，接近完全流通。</li>
+        </ul>
+
+        <h3>合约地址与关键数据</h3>
+        <p><span class="data-point">合约地址：0x32353a6c91143bfd6c7d363b546e62a9a2489a20</span></p>
+        <p><span class="data-point">区块链：以太坊 (ERC-20)</span></p>
+
+        <h3>技术角色的演进</h3>
+        <p>AGLD从最初的Loot社区“金币”和治理代币，演进为<strong>Loot Chain（后更名为Adventure Layer）</strong>的原生Gas代币。</p>
+        <ul>
+            <li><strong>网络类型：</strong>由Caldera采用OP Stack构建的Optimistic Rollup Layer 2。</li>
+            <li><strong>核心作用：</strong>支付Adventure Layer上所有交易的燃料费（Gas），价值与网络使用率深度绑定。</li>
+        </ul>
+
+        <h3>创始人与起源</h3>
+        <ul>
+            <li><strong>AGLD创建者：</strong>Will Papper（Syndicate DAO联合创始人）。</li>
+            <li><strong>Loot NFT创建者：</strong>Dom Hofmann（Vine联合创始人）。</li>
+        </ul>
+
+        <div class="warning-box">
+            <strong>⚠️ 重要提示：项目重名风险</strong>
+            <p>加密领域存在另一个名为“Anthem Gold (ANTHEM)”的项目，由实物黄金支撑。请务必通过全称“Adventure Gold”和上述合约地址进行核对，避免混淆。</p>
+        </div>
+
+        <h2>二、市场表现与交易数据（截至2026年2月22日）</h2>
+
+        <h3>1. 当前价格与市场概览</h3>
+        <p><span class="data-point">价格：~$0.2172</span> <span class="data-point">24小时涨跌：+3.28%</span></p>
+        <p><span class="data-point">市值：~$16.79M</span> <span class="data-point">流通量：~77.31M 枚</span> <span class="data-point">24小时交易量：~$92.61K</span></p>
+
+        <h3>2. 近短期价格预测（模型参考）</h3>
+        <ul>
+            <li><strong>2月23日（明日）：</strong>约 $0.217229</li>
+            <li><strong>2月28日（本周末）：</strong>约 $0.217408</li>
+            <li><strong>3月23日（未来30天）：</strong>约 $0.218092</li>
+        </ul>
+        <p><em>注：该模型预测显示短期内价格波动预期非常平缓，仅供参考。</em></p>
+
+        <h3>3. 历史价格走势关键节点</h3>
+        <ul>
+            <li><strong>历史最高价（ATH）：</strong>$7.70（2021年9月，Loot热潮与上线Coinbase Pro）。</li>
+            <li><strong>历史最低价（ATL）：</strong>$0.208231（2022年11月，加密熊市深谷）。</li>
+            <li><strong>2023年显著反弹：</strong>约一个多月内从$0.4上涨至$1.24，涨幅超200%。</li>
+            <li><strong>2025年持有者动态：</strong>Figma创始人Dylan Field持有超230万枚AGLD（当时价值约176万美元）。</li>
+        </ul>
+
+        <h3>4. 主要交易场所</h3>
+        <ul>
+            <li><strong>中心化交易所（CEX）：</strong>Coinbase Pro（2021年9月上线），可能在其他大型交易所有交易对。</li>
+            <li><strong>去中心化交易所（DEX）：</strong>Uniswap、Sushiswap等。</li>
+        </ul>
+        <div class="warning-box">
+            <strong>⚠️ 交易安全提醒</strong>
+            <p>交易前务必通过Etherscan等区块浏览器核对官方合约地址，防范仿冒代币风险。</p>
+        </div>
+
+        <h2>三、生态发展与应用场景</h2>
+        <p>AGLD的生态已演进为以<strong>Adventure Layer（L2网络）</strong>为核心，由多元化合作伙伴支撑的“自治世界”生态系统。</p>
+
+        <h3>🔗 生态系统演进：从Loot NFT到专用Layer 2</h3>
+        <ul>
+            <li><strong>技术架构：</strong>由Caldera基于OP Stack构建的Optimistic Rollup，采用Polygon作为数据可用性层以降低成本。</li>
+            <li><strong>核心目标：</strong>为完全链上游戏（FOCG）和复杂dApp提供高性能专用环境。</li>
+            <li><strong>代币角色：</strong>AGLD是该网络的原生Gas代币。</li>
+        </ul>
+
+        <h3>🪙 AGLD的核心应用场景</h3>
+        <table>
+            <tr>
+                <th>场景层次</th>
+                <th>具体功能</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>1. 治理与决策</td>
+                <td>社区治理投票</td>
+                <td>对生态发展方向、协议参数、社区基金使用等提案进行投票。</td>
+            </tr>
+            <tr>
+                <td>2. 网络基础设施</td>
+                <td>支付Gas费用</td>
+                <td>作为Adventure Layer的原生Gas代币，支付所有交易手续费。</td>
+            </tr>
+            <tr>
+                <td>3. 经济系统与激励</td>
+                <td>质押与收益</td>
+                <td>通过官方合约质押AGLD获取收益（APR约8%-12%），奖励来源于生态手续费。</td>
+            </tr>
+            <tr>
+                <td>4. 生态准入凭证</td>
+                <td>早期社区空投</td>
+                <td>初始通过向Loot NFT持有者空投完成，奠定公平启动基因。</td>
+            </tr>
+        </table>
+
+        <h3>🌐 生态合作与战略布局（2024年起）</h3>
+        <p><strong>金融与合规化合作：</strong>与Coins.ph、渣打银行、胜利证券、广发证券（香港）、华检医疗等合作，拓展法币通道与资产代币化能力。</p>
+        <p><strong>技术与游戏生态合作：</strong>与SOMNIA项目合作增强链上游戏体验；获得DWF Labs流动性支持；扩展质押协议合作。</p>
+        <p><strong>发展目标：</strong>计划在2024-2026年间，生态伙伴数量年增20%，生态营收占比从15%提升至25%。</p>
+
+        <h3>🗳️ 社区治理与未来路线图（2024-2026）</h3>
+        <ul>
+            <li><strong>2024-2025年：</strong>Adventure Layer全面部署；开放ZK身份模块测试。</li>
+            <li><strong>2025年：</strong>上线首个可组合RPG第一关卡；发布游戏Demo和开发者工具包。</li>
+            <li><strong>2026年及以后：</strong>构建完整的“自治世界”；探索AI剧本引擎；推动跨链互通。</li>
+        </ul>
+
+        <h2>四、链上数据与安全审计</h2>
+
+        <h3>持币地址分布与集中度</h3>
+        <p>持仓与核心社区成员和高净值投资者深度绑定（如Figma创始人Dylan Field）。初始空投分发给约8,000名Loot持有者，奠定了相对分散的基础，但当前具体集中度需通过链上分析平台实时查询。</p>
+
+        <h3>大额转账与链上活动洞察</h3>
+        <p>监控大额转账（如向CEX充值地址转入）是预判市场情绪的方式。需结合Etherscan等工具和项目消息面进行综合分析。</p>
+
+        <h3>质押数据解析</h3>
+        <p>官方质押合约提供约8%–12%的APR，奖励来源于生态内NFT交易手续费。全网质押总量和质押率的具体数据需查询官方界面或链上合约。注意2025年12月初有约155万枚代币解锁。</p>
+
+        <h3>安全审计与智能合约评估</h3>
+        <ul>
+            <li><strong>审计概况：</strong>由OpenZeppelin进行审计，基于成熟框架开发，未发现已知漏洞。</li>
+            <li><strong>核心安全机制：</strong>关键操作由多重签名（Multisig）钱包控制。</li>
+            <li><strong>审计关注维度：</strong>合约架构安全、核心逻辑正确性、权限管理等。</li>
+        </ul>
+
+        <div class="highlight-box">
+            <p><strong>总结：</strong>AGLD是一个深度绑定Loot生态及Adventure Layer L2网络发展的治理与效用型资产。其价值逻辑紧密依赖于Lootverse的生态繁荣度、Adventure Layer的网络采用率，以及社区治理的有效性。投资者需密切关注其生态发展里程碑、链上数据变化，并始终注意智能合约及市场交易风险。</p>
+        </div>
+
+        <div class="footer-note">
+            <p>本报告基于公开文档内容生成，数据截至2026年2月22日。所有信息仅供参考，不构成任何投资建议。</p>
+            <p>生成日期：2026-02-23</p>
+        </div>
+    </div>
+</body>
+</html>
