@@ -1,8 +1,0 @@
-{
-  "scripts": {
-    "build": "vite build"
-  },
-  "devDependencies": {
-    "vite": "^7.3.1"
-  }
-}
