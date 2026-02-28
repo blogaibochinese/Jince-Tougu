@@ -3,15 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>锦策投顾 - 内容更新</title>
+    <title>锦策投顾 - ETH 详细调研报告</title>
     <link rel="icon" type="image/png" href="https://cf.aibochinese.com/%E9%94%A6%E7%AD%96%E6%8A%95%E9%A1%BE/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20251212072309_96_19.jpg" sizes="16x16">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="/post/pagefind/pagefind-ui.css">
     
     <style>
-        /* ========================================
-           基础样式重置和字体设置
-        ======================================== */
 @import url('https://at.alicdn.com/t/webfont_5w0j5w7k7gh.css');
         * {
             margin: 0;
@@ -21,15 +18,12 @@
 
         body {
             font-family: "Microsoft YaHei", "微软雅黑", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: #ffffff;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
         }
 
-        /* ========================================
-           固定顶部导航栏
-        ======================================== */
         .navbar {
             position: fixed;
             top: 0;
@@ -38,7 +32,7 @@
             z-index: 1000;
             padding: 15px 0;
             transition: all 0.3s ease;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
@@ -69,16 +63,15 @@
             letter-spacing: 2px;
         }
         .logo h2 {
-    font-size: 1.8rem;
-    font-weight: bold;
-}
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
 
-.logo img {
-    height: 50px;
-    width: auto; /* 长度灵活，根据图片比例自动调整 */
-}
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
 
-        /* 桌面端导航菜单 */
         .nav-menu {
             display: flex;
             list-style: none;
@@ -90,14 +83,13 @@
         }
 
         .nav-link {
-            color: #333333;
+            color: #333;
             text-decoration: none;
             font-size: 16px;
             font-weight: 500;
             padding: 10px 0;
             position: relative;
             transition: all 0.3s ease;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
         }
 
         .navbar.scrolled .nav-link {
@@ -124,7 +116,6 @@
             color: #FFD700;
         }
 
-        /* 下拉菜单 */
         .dropdown {
             position: relative;
         }
@@ -169,7 +160,6 @@
             color: #FFD700;
         }
 
-        /* 汉堡菜单按钮 */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -180,9 +170,13 @@
         .hamburger span {
             width: 25px;
             height: 3px;
-            background: hwb(46 7% 0%);
+            background: #333;
             margin: 3px 0;
             transition: 0.3s;
+        }
+
+        .navbar.scrolled .hamburger span {
+            background: #fff;
         }
 
         .hamburger.active span:nth-child(1) {
@@ -197,15 +191,113 @@
             transform: rotate(45deg) translate(-5px, -6px);
         }
 
+        .main-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 20px 60px;
+        }
 
- /* 页脚 */
+        .report-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .report-title {
+            font-size: 2.5rem;
+            color: #1f2937;
+            margin-bottom: 10px;
+        }
+
+        .report-subtitle {
+            font-size: 1.2rem;
+            color: #6b7280;
+        }
+
+        .report-meta {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        .report-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: #1f2937;
+            margin-bottom: 20px;
+            border-left: 4px solid #627EEA;
+            padding-left: 15px;
+        }
+
+        .section-content {
+            color: #4b5563;
+            line-height: 1.8;
+        }
+
+        .section-content p {
+            margin-bottom: 15px;
+        }
+
+        .section-content ul {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        .section-content li {
+            margin-bottom: 8px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+            border-left: 4px solid #627EEA;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
         footer {
             background: linear-gradient(135deg, #dce3e9, #34495e);
             color: white;
             padding: 2rem;
             text-align: center;
             border-radius: 15px;
-            margin-top: 3rem;
+            margin: 3rem auto;
+            max-width: 1200px;
         }
 
         .footer p {
@@ -226,11 +318,11 @@
             margin: 0 5px;
             vertical-align: middle;
         }
-        /* 悬浮微信图标样式 */
+
         .wechat-float {
             width: 60px;
             height: 60px;
-            background-color: hsl(148, 45%, 88%); /* 微信绿色 */
+            background-color: hsl(148, 45%, 88%);
             border-radius: 50%;
             cursor: pointer;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -247,13 +339,11 @@
         .wechat-icon {
             width: 40px;
             height: 40px;
-            background-image: url('https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%C2%B7%E5%AE%A2%E5%9B%BE%E7%89%87%E5%BA%93/wechaticon.png'); /* 用户提供的微信图标URL */
+            background-image: url('https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%C2%B7%E5%AE%A2%E5%9B%BE%E7%89%87%E5%BA%93/wechaticon.png');
             background-size: cover;
             background-position: center;
         }
 
-        /* 弹出窗样式 */
-        /* 悬浮图标容器 */
         .float-icons-container {
             position: fixed;
             right: 20px;
@@ -278,11 +368,10 @@
             align-items: center;
         }
 
-        /* 悬浮搜索按钮 */
         .search-float {
             width: 60px;
             height: 60px;
-            background-color: #3B82F6; /* 蓝色 */
+            background-color: #3B82F6;
             border-radius: 50%;
             cursor: pointer;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -296,7 +385,6 @@
             transform: scale(1.1);
         }
 
-        /* 搜索弹出窗 */
         .search-modal {
             display: none;
             position: fixed;
@@ -339,7 +427,7 @@
             width: 200px;
             height: 200px;
             margin: 0 auto 10px;
-            display: block; /* 二维码图片，用户替换src */
+            display: block;
         }
 
         .close-btn {
@@ -356,95 +444,7 @@
             background-color: #ff7875;
         }
 
-        /* ==================== 全新 Pagefind 搜索样式（搜索框水平居中版） ==================== */
-.search-container {
-    position: relative;
-    /* 删除 margin-right，改为自动左右 margin 实现居中 */
-    margin: 0 auto;           /* 关键：水平居中 */
-    z-index: 1001;
-    min-width: 200px;
-    max-width: 380px;         /* 建议加上最大宽度，和下拉结果保持一致 */
-    width: 100%;
-    display: flex;
-    justify-content: center;  /* 内部元素水平居中 */
-    align-items: center;
-}
-
-/* 输入框：去掉宽度 100% + focus 扩展的左右晃动问题 */
-#pagefind-search .pagefind-ui__search-input {
-    padding: 10px 16px;
-    border: 2px solid #ddd;
-    border-radius: 25px;
-    font-size: 16px;
-    /* 固定宽度，或者使用 min-width + max-width 防止晃动 */
-    width: 300px;                     /* 固定一个舒适的宽度 */
-    max-width: 100%;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    background: white;
-    color: #333;
-    box-sizing: border-box;
-    outline: none;
-}
-
-#pagefind-search .pagefind-ui__search-input:focus {
-    border-color: #4a6fa5;
-    box-shadow: 0 0 0 4px rgba(74, 111, 165, 0.2);
-    /* focus 时不再改变宽度，避免整个搜索框左右晃动 */
-}
-
-/* 下拉结果：从右对齐改为居中对齐 */
-#pagefind-search .pagefind-ui__results {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-    position: absolute;
-    top: 100%;
-    left: 50%;                        /* 关键：左边 50% */
-    transform: translateX(-50%);      /* 关键：向左偏移自身宽度的一半 → 完全居中 */
-    right: auto;                      /* 取消原来的 right: 0 */
-    width: 380px;
-    max-height: 70vh;
-    overflow-y: auto;
-    margin-top: 8px;
-    z-index: 1000;
-    padding: 8px 0;
-}
-
-/* 其余样式保持不变 */
-#pagefind-search .pagefind-ui__result {
-    padding: 12px 16px;
-    border-bottom: 1px solid #eee;
-    transition: background-color 0.2s;
-}
-#pagefind-search .pagefind-ui__result:last-child { border-bottom: none; }
-#pagefind-search .pagefind-ui__result:hover { background-color: #f8f9ff; }
-#pagefind-search .pagefind-ui__result-title { font-size: 15px; font-weight: 600; color: #1f2937; margin-bottom: 4px; }
-#pagefind-search .pagefind-ui__result-link { 
-    color: #3B82F6; 
-    text-decoration: none; 
-    display: inline-block;
-    width: 100%;
-    position: relative;
-    z-index: 10;
-}
-#pagefind-search .pagefind-ui__result-link:hover { text-decoration: underline; }
-#pagefind-search .pagefind-ui__result-excerpt { font-size: 13.5px; color: #666; line-height: 1.5; margin-top: 4px; }
-.pagefind-ui__result-excerpt mark { background: #dbeafe; color: #1e40af; padding: 1px 3px; border-radius: 3px; }
-#pagefind-search .pagefind-ui__message { padding: 20px; text-align: center; color: #666; font-size: 14px; }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-50px) scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        /* 移动端适配 */
+        .mobile-nav { display: none; }
         @media (max-width: 768px) {
             .hamburger {
                 display: flex;
@@ -471,6 +471,7 @@
 
             .nav-link {
                 font-size: 24px;
+                color: #fff;
             }
 
             .dropdown-content {
@@ -496,11 +497,7 @@
             .wechat-popup p {
                 font-size: 13px;
             }
-        }
 
-        /* 移动端底部导航 */
-        .mobile-nav { display: none; }
-        @media (max-width: 768px) {
             .mobile-nav {
                 display: block;
                 position: fixed;
@@ -530,142 +527,19 @@
                 box-shadow: 0 2px 10px rgba(59,130,246,0.3);
             }
             .mobile-nav .nav-item.center:hover { background: #2563eb; }
-        }
 
-/* ==================== 全新 Pagefind 搜索样式（搜索框水平居中版） ==================== */
-.search-container {
-    position: relative;
-    /* 删除 margin-right，改为自动左右 margin 实现居中 */
-    margin: 0 auto;           /* 关键：水平居中 */
-    z-index: 1001;
-    min-width: 200px;
-    max-width: 380px;         /* 建议加上最大宽度，和下拉结果保持一致 */
-    width: 100%;
-    display: flex;
-    justify-content: center;  /* 内部元素水平居中 */
-    align-items: center;
-}
+            .report-title {
+                font-size: 1.8rem;
+            }
 
-/* 输入框：去掉宽度 100% + focus 扩展的左右晃动问题 */
-#pagefind-search .pagefind-ui__search-input {
-    padding: 10px 16px;
-    border: 2px solid #ddd;
-    border-radius: 25px;
-    font-size: 16px;
-    /* 固定宽度，或者使用 min-width + max-width 防止晃动 */
-    width: 300px;                     /* 固定一个舒适的宽度 */
-    max-width: 100%;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    background: white;
-    color: #333;
-    box-sizing: border-box;
-    outline: none;
-}
-
-#pagefind-search .pagefind-ui__search-input:focus {
-    border-color: #4a6fa5;
-    box-shadow: 0 0 0 4px rgba(74, 111, 165, 0.2);
-    /* focus 时不再改变宽度，避免整个搜索框左右晃动 */
-}
-
-/* 下拉结果：从右对齐改为居中对齐 */
-#pagefind-search .pagefind-ui__results {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-    position: absolute;
-    top: 100%;
-    left: 50%;                        /* 关键：左边 50% */
-    transform: translateX(-50%);      /* 关键：向左偏移自身宽度的一半 → 完全居中 */
-    right: auto;                      /* 取消原来的 right: 0 */
-    width: 380px;
-    max-height: 70vh;
-    overflow-y: auto;
-    margin-top: 8px;
-    z-index: 1000;
-    padding: 8px 0;
-}
-
-/* 其余样式保持不变 */
-#pagefind-search .pagefind-ui__result {
-    padding: 12px 16px;
-    border-bottom: 1px solid #eee;
-    transition: background-color 0.2s;
-}
-#pagefind-search .pagefind-ui__result:last-child { border-bottom: none; }
-#pagefind-search .pagefind-ui__result:hover { background-color: #f8f9ff; }
-#pagefind-search .pagefind-ui__result-title { font-size: 15px; font-weight: 600; color: #1f2937; margin-bottom: 4px; }
-#pagefind-search .pagefind-ui__result-link { 
-    color: #3B82F6; 
-    text-decoration: none; 
-    display: inline-block;
-    width: 100%;
-    position: relative;
-    z-index: 10;
-}
-#pagefind-search .pagefind-ui__result-link:hover { text-decoration: underline; }
-#pagefind-search .pagefind-ui__result-excerpt { font-size: 13.5px; color: #666; line-height: 1.5; margin-top: 4px; }
-.pagefind-ui__result-excerpt mark { background: #dbeafe; color: #1e40af; padding: 1px 3px; border-radius: 3px; }
-#pagefind-search .pagefind-ui__message { padding: 20px; text-align: center; color: #666; font-size: 14px; }
-           section {
-            padding-top: 80px; /* 添加顶部内边距避免被固定导航栏遮挡 */
-        }
-        
-        .article-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .article-item {
-            text-align: center;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            transition: background-color 0.3s;
-        }
-        .article-item:hover { background-color: #f9f9f9; }
-        .article-link { text-decoration: none; color: #333; font-size: 16px; font-weight: bold; display: block; }
-        .article-link:hover { color: #007bff; }
-        @media (max-width: 768px) { 
-            .article-grid { grid-template-columns: 1fr; } 
-            
-            section {
-                padding-top: 80px; /* 移动端适配 */
+            .report-section {
+                padding: 20px;
             }
         }
-
-        .three-up {
-            display: grid;
-            grid-template-columns: repeat(3, 300px);
-            gap: 16px;
-            justify-content: center;
-            max-width: 1000px;
-            margin: 0 auto 22px auto;
-            padding: 8px 0;
-        }
-        .three-up .item img {
-            width: 300px;
-            height: 50px;
-            border-radius: 6px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-            object-fit: cover;
-            transition: all 0.2s;
-        }
-        .three-up .item img:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-        @media (max-width: 980px) { .three-up { grid-template-columns: repeat(2, 300px); } }
-        @media (max-width: 660px) { .three-up { grid-template-columns: 1fr; max-width: 300px; } } 
-   </style>
+    </style>
 </head>
 
 <body>
-    <!-- 固定导航栏 -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="logo">
@@ -682,7 +556,7 @@
                         <a href="https://blog.aibochinese.com/payment/roogoo" class="dropdown-item">Roogoo联名万事达卡</a>
                     </div>
                 </li>
-              <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a href="#" class="nav-link">资产组合钱包 ▼</a>
                     <div class="dropdown-content">
                         <a href="https://blog.aibochinese.com/payment/pinkwallet" class="dropdown-item">PinkWallet</a>
@@ -713,51 +587,116 @@
             </div>
         </div>
     </nav>
-    <section> 
-                <div class="container">
-                <h2 class="section-title">愿伙伴们的投资，稳健有力，一帆风顺！</h2>
-                            <!-- 修复后的搜索框 -->
-            <div class="search-container">
-                <div id="pagefind-search"></div>
-            </div>
 
-             <div class="article-grid">
-            <div class="article-item"><a href="/post/crypto/btc-report.html" class="article-link">比特币(BTC)详细调研报告</a></div>
-            <div class="article-item"><a href="/post/crypto/eth-report.html" class="article-link">以太坊(ETH)详细调研报告</a></div>
-            <div class="article-item"><a href="/post/crypto/bnb-report.html" class="article-link">币安币(BNB)详细调研报告</a></div>
-            <div class="article-item"><a href="/post/crypto/xmr-report.html" class="article-link">门罗币(XMR)详细调研报告</a></div>
-            <div class="article-item"><a href="https://tougu.aibochinese.com/post/ETH20251124" class="article-link">ETH研报 20251124</a></div>        
-            <div class="article-item"><a href="https://tougu.aibochinese.com/followme" class="article-link">拥有大量订阅，是每个交易者的理想追求</a></div>
-            <div class="article-item"><a href="https://blog.aibochinese.com/education/tutor%20guide" class="article-link">国际中文教师从业指南</a></div>
-            <div class="article-item"><a href="https://blog.aibochinese.com/payment/roogoo" class="article-link">Roogoo联名万事达卡，免开卡费0年费</a></div>
-            <div class="article-item"><a href="https://blog.aibochinese.com/tools/capcut" class="article-link">免费使用剪映9.0.0会员功能</a></div>
-            <div class="article-item"><a href="https://blog.aibochinese.com/tools/photoshop" class="article-link">Photoshop 2025中文破解版 下载⏬使用</a></div>
-            <div class="article-item"><a href="https://blog.aibochinese.com/sitesbuild" class="article-link">Cloudflare搭建永久免费网站</a></div>
+    <div class="main-content">
+        <div class="report-header">
+            <h1 class="report-title">以太坊 (ETH) 详细调研报告</h1>
+            <p class="report-subtitle">全球智能合约平台 - Web3 世界的基础设施</p>
+            <div class="report-meta">
+                <span><i class="fas fa-calendar-alt"></i> 2026-02-28</span>
+                <span><i class="fas fa-chart-line"></i> 投资研报</span>
+                <span><i class="fas fa-tag"></i> ETH</span>
+            </div>
         </div>
- </section>
-    <!-- Pagefind 搜索（已完美修复） -->
-    <script src="/post/pagefind/pagefind-ui.js"></script>
-    <script>
-        window.addEventListener('DOMContentLoaded', function () {
-            console.log("Initializing Pagefind search...");
-            try {
-                new PagefindUI({
-                    element: "#pagefind-search",
-                    showImages: false,
-                    showSubResults: true,
-                    resetStyles: false,
-                    translations: {
-                        placeholder: "投资标的、研报、教程..."
-                    }
-                });
-                console.log("Pagefind search initialized successfully");
-            } catch (error) {
-                console.error("Pagefind search initialization failed:", error);
-            }
-        });
-    </script>
-    </script>
-                <!-- 页脚（完整保留） -->
+
+        <div class="report-section">
+            <h2 class="section-title">一、项目概述</h2>
+            <div class="section-content">
+                <p>以太坊（Ethereum，简称 ETH）是由 Vitalik Buterin 于2013年提出，2015年正式上线的开源区块链平台。以太坊的核心创新在于引入了智能合约功能，使得开发者可以在区块链上构建去中心化应用（DApps）。</p>
+                <div class="highlight-box">
+                    <strong>核心特点：</strong>
+                    <ul>
+                        <li>智能合约：自动化执行的可编程合约</li>
+                        <li>EVM：以太坊虚拟机，运行智能合约的环境</li>
+                        <li>DeFi生态：去中心化金融的基石</li>
+                        <li>NFT标准：ERC-721、ERC-1155等非同质化代币标准</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="report-section">
+            <h2 class="section-title">二、关键数据指标</h2>
+            <div class="section-content">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">无上限</div>
+                        <div class="stat-label">理论供应量</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">~1.2亿</div>
+                        <div class="stat-label">当前流通量</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">~12秒</div>
+                        <div class="stat-label">出块时间</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">PoS</div>
+                        <div class="stat-label">共识机制</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="report-section">
+            <h2 class="section-title">三、技术分析</h2>
+            <div class="section-content">
+                <p><strong>共识机制：</strong>已从 PoW 升级为 PoS（权益证明），显著降低了能源消耗。</p>
+                <p><strong>扩容方案：</strong>Layer 2 解决方案（如 Arbitrum、Optimism、zkSync 等）大幅提高了网络吞吐量。</p>
+                <p><strong>EIP升级：</strong>通过以太坊改进提案持续优化网络性能和功能。</p>
+                <p><strong>销毁机制：</strong>EIP-1559 引入了基础费销毁，使 ETH 具有通缩属性。</p>
+            </div>
+        </div>
+
+        <div class="report-section">
+            <h2 class="section-title">四、生态系统</h2>
+            <div class="section-content">
+                <p><strong>DeFi：</strong>Uniswap、Aave、MakerDAO 等去中心化金融协议构成了庞大的金融生态。</p>
+                <p><strong>NFT：</strong>OpenSea、BAYC、CryptoPunks 等推动了数字艺术和收藏品市场的发展。</p>
+                <p><strong>DAO：</strong>去中心化自治组织成为治理和协作的新模式。</p>
+                <p><strong>L2生态：</strong>二层网络正在成为以太坊扩容的核心解决方案。</p>
+            </div>
+        </div>
+
+        <div class="report-section">
+            <h2 class="section-title">五、投资分析</h2>
+            <div class="section-content">
+                <p><strong>优势：</strong></p>
+                <ul>
+                    <li>最成熟的智能合约平台</li>
+                    <li>庞大的开发者社区</li>
+                    <li>丰富的 DeFi、NFT 等生态应用</li>
+                    <li>机构和企业广泛采用</li>
+                    <li>EIP-1559 带来的通缩机制</li>
+                </ul>
+                <p><strong>风险：</strong></p>
+                <ul>
+                    <li>Layer 1 拥堵和高额 Gas 费（已通过 Layer 2 缓解）</li>
+                    <li>来自其他公链的竞争</li>
+                    <li>监管不确定性</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="report-section">
+            <h2 class="section-title">六、未来展望</h2>
+            <div class="section-content">
+                <p>以太坊将继续作为 Web3 的基础设施，随着技术升级和生态系统的发展，有望在更多领域实现应用落地。</p>
+                <div class="highlight-box">
+                    <strong>关注要点：</strong>
+                    <ul>
+                        <li>Layer 2 扩容方案的发展</li>
+                        <li>ETH 质押率和收益率变化</li>
+                        <li>EIP 升级带来的新功能</li>
+                        <li>机构采用情况</li>
+                        <li>监管政策动向</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <div class="footer">
             <p style="margin-bottom: 10px;">感谢关注:
@@ -774,7 +713,6 @@
         </div>
     </footer>
 
-    <!-- 移动端底部导航 -->
     <div class="mobile-nav">
         <div class="nav-container">
             <a href="https://tougu.aibochinese.com/" class="nav-item active"><i class="fas fa-home icon"></i><span class="text">首页</span></a>
@@ -785,11 +723,24 @@
         </div>
     </div>
 
-
-    <!-- 微信浮窗 -->
-    <div class="wechat-float" onclick="toggleWechatModal()">
-        <div class="wechat-icon"></div>
+    <div class="float-icons-container">
+        <div class="wechat-float" onclick="toggleWechatModal()">
+            <div class="wechat-icon"></div>
+        </div>
+        
+        <div class="search-float" onclick="toggleSearchModal()">
+            <i class="fa fa-search text-white text-2xl"></i>
+        </div>
     </div>
+
+    <div id="searchModal" class="search-modal" onclick="closeSearchModal(event)">
+        <div class="search-popup" onclick="event.stopPropagation()">
+            <h3>搜索内容</h3>
+            <div id="pagefind-search-popup"></div>
+            <button class="close-btn" onclick="closeSearchModal()">关闭</button>
+        </div>
+    </div>
+
     <div id="wechatModal" class="wechat-modal" onclick="closeWechatModal(event)">
         <div class="wechat-popup" onclick="event.stopPropagation()">
             <h3>微信客服</h3>
@@ -799,42 +750,52 @@
         </div>
     </div>
 
-    <!-- 脚本 -->
+    <script src="/post/pagefind/pagefind-ui.js"></script>
     <script>
-        // 微信弹窗
+        window.addEventListener('DOMContentLoaded', function () {
+            console.log("Initializing Pagefind search...");
+            try {
+                new PagefindUI({
+                    element: "#pagefind-search-popup",
+                    showImages: false,
+                    showSubResults: true,
+                    resetStyles: false,
+                    translations: {
+                        placeholder: "投资标的、研报、教程..."
+                    }
+                });
+                console.log("Pagefind search initialized successfully");
+            } catch (error) {
+                console.error("Pagefind search initialization failed:", error);
+            }
+        });
+
+        function toggleSearchModal() {
+            const modal = document.getElementById('searchModal');
+            modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function closeSearchModal(event) {
+            document.getElementById('searchModal').style.display = 'none';
+        }
+
         function toggleWechatModal() {
             const modal = document.getElementById('wechatModal');
-            if (modal.style.display === 'flex' || modal.classList.contains('show')) {
-                closeWechatModal();
-            } else {
-                showWechatModal();
-            }
+            modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
         }
-        
-        function showWechatModal() {
-            const modal = document.getElementById('wechatModal');
-            modal.style.display = 'flex';
-            modal.classList.add('show');
-            document.body.style.overflow = 'hidden'; // 防止背景滚动
-        }
-        
+
         function closeWechatModal(event) {
             if (event && event.stopPropagation) {
                 event.stopPropagation();
             }
-            const modal = document.getElementById('wechatModal');
-            modal.style.display = 'none';
-            modal.classList.remove('show');
-            document.body.style.overflow = ''; // 恢复背景滚动
+            document.getElementById('wechatModal').style.display = 'none';
         }
 
-        // 汉堡菜单和移动端导航
         document.addEventListener('DOMContentLoaded', function() {
             const hamburger = document.getElementById('hamburger');
             const navMenu = document.getElementById('navMenu');
             const navbar = document.getElementById('navbar');
             
-            // 汉堡菜单点击事件
             if (hamburger) {
                 hamburger.addEventListener('click', function() {
                     hamburger.classList.toggle('active');
@@ -842,7 +803,6 @@
                 });
             }
             
-            // 点击导航菜单项后关闭移动端菜单
             const navLinks = document.querySelectorAll('.nav-link');
             navLinks.forEach(link => {
                 link.addEventListener('click', function() {
@@ -851,7 +811,6 @@
                 });
             });
             
-            // 滚动时改变导航栏样式
             window.addEventListener('scroll', function() {
                 if (window.scrollY > 50) {
                     navbar.classList.add('scrolled');
@@ -860,7 +819,6 @@
                 }
             });
             
-            // 移动端底部导航
             const navItems = document.querySelectorAll('.mobile-nav .nav-item:not(.center)');
             navItems.forEach(item => {
                 item.addEventListener('click', function() {
@@ -870,113 +828,5 @@
             });
         });
     </script>
-
-    
-    <!-- 终极链接修复解决方案已移除，避免干扰页面正常导航 -->
-    <!-- <script>
-        // 终极链接修复解决方案
-        (function() {
-            'use strict';
-            
-            console.log('启动终极链接修复方案...');
-            
-            // 立即拦截所有链接点击事件
-            document.addEventListener('click', function(event) {
-                let target = event.target;
-                
-                // 找到最近的链接元素
-                while (target && target.tagName !== 'A') {
-                    target = target.parentElement;
-                }
-                
-                if (target && target.tagName === 'A') {
-                    const href = target.getAttribute('href');
-                    
-                    // 检查是否是相对HTML链接且缺少post前缀
-                    if (href && href.endsWith('.html') && 
-                        !href.startsWith('/') && 
-                        !href.startsWith('http') && 
-                        !href.includes('post/')) {
-                        
-                        const newHref = '/post/' + href;
-                        console.log('即时修复链接:', href, '->', newHref);
-                        
-                        // 阻止默认行为
-                        event.preventDefault();
-                        
-                        // 修复链接
-                        target.setAttribute('href', newHref);
-                        
-                        // 立即跳转到修复后的链接
-                        window.location.href = newHref;
-                    }
-                }
-            }, true); // 使用捕获阶段
-            
-            // 监听所有动态生成的链接
-            const observer = new MutationObserver(function(mutations) {
-                mutations.forEach(function(mutation) {
-                    mutation.addedNodes.forEach(function(node) {
-                        if (node.nodeType === 1) {
-                            // 处理新添加的元素
-                            processElement(node);
-                        }
-                    });
-                });
-            });
-            
-            function processElement(element) {
-                // 如果是链接元素，直接处理
-                if (element.tagName === 'A') {
-                    fixLink(element);
-                }
-                
-                // 如果包含子元素，递归处理
-                if (element.querySelectorAll) {
-                    const links = element.querySelectorAll('a[href*=".html"]');
-                    links.forEach(fixLink);
-                }
-            }
-            
-            function fixLink(link) {
-                const href = link.getAttribute('href');
-                if (href && href.endsWith('.html') && 
-                    !href.startsWith('/') && 
-                    !href.startsWith('http') && 
-                    !href.includes('post/')) {
-                    
-                    const newHref = '/post/' + href;
-                    console.log('修复动态链接:', href, '->', newHref);
-                    link.setAttribute('href', newHref);
-                }
-            }
-            
-            // 开始监听DOM变化
-            observer.observe(document.body, {
-                childList: true,
-                subtree: true
-            });
-            
-            // 立即处理现有页面中的所有链接
-            function fixExistingLinks() {
-                const links = document.querySelectorAll('a[href*=".html"]');
-                links.forEach(fixLink);
-                console.log(`已处理 ${links.length} 个现有链接`);
-            }
-            
-            // 页面加载完成后修复现有链接
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', fixExistingLinks);
-            } else {
-                fixExistingLinks();
-            }
-            
-            // 定期检查和修复（备用机制）
-            setInterval(fixExistingLinks, 1000);
-            
-            console.log('终极链接修复方案已激活');
-        })();
-    </script> -->
-    
 </body>
 </html>
