@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>沃尔玛 (WMT) 股票调研报告 - 锦策投顾</title>
+    <link rel="icon" type="image/png" href="https://cf.aibochinese.com/%E9%94%A6%E7%AD%96%E6%8A%95%E9%A1%BE/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20251212072309_96_19.jpg" sizes="16x16">
+    <meta name="description" content="沃尔玛 (WMT) 股票调研报告">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+@import url('https://at.alicdn.com/t/webfont_5w0j5w7k7gh.css');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Microsoft YaHei", "微软雅黑", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #ffffff;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            background: linear-gradient(135deg, #0f172a 0%, #000000 100%);
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #FFD700, #B8860B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+        .logo h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+        .logo img {
+    height: 50px;
+    width: auto;
+}
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        .nav-item {
+            position: relative;
+        }
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 10px 0;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, #FFD700, #B8860B);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .nav-link:hover {
+            color: #FFD700;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(0, 0, 0, 0.95);
+            min-width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .dropdown-item {
+            display: block;
+            color: #ffffff;
+            padding: 12px 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+        .dropdown-item:hover {
+            background: rgba(255, 215, 0, 0.1);
+            color: #FFD700;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #ffffff;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, #FFD700, #B8860B);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, #B8860B, #FFD700);
+        }
+        footer {
+            background: linear-gradient(135deg, #dce3e9, #34495e);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 15px;
+            margin-top: 3rem;
+        }
+        .footer p {
+            margin-bottom: 1rem;
+        }
+        .footer a {
+            color: #ffcc2f;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer a:hover {
+            color: #f38020;
+        }
+        .footer img {
+            margin: 0 5px;
+            vertical-align: middle;
+        }
+        .wechat-float {
+            width: 60px;
+            height: 60px;
+            background-color: hsl(148, 45%, 88%);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        .wechat-float:hover {
+            transform: scale(1.1);
+        }
+        .wechat-icon {
+            width: 40px;
+            height: 40px;
+            background-image: url('https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%C2%B7%E5%AE%A2%E5%9B%BE%E7%89%87%E5%BA%93/wechaticon.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .float-icons-container {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .wechat-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        .search-float {
+            width: 60px;
+            height: 60px;
+            background-color: #3B82F6;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        .search-float:hover {
+            transform: scale(1.1);
+        }
+        .search-modal {
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .search-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .search-popup {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 90%;
+        }
+        .search-popup h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .wechat-popup {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            width: 90%;
+        }
+        .wechat-qr {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 10px;
+            display: block;
+        }
+        .close-btn {
+            background-color: #ff4d4f;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        .close-btn:hover {
+            background-color: #ff7875;
+        }
+        .mobile-nav { display: none; }
+        @media (max-width: 768px) {
+            .mobile-nav {
+                display: block;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: white;
+                box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+                z-index: 50;
+            }
+            .mobile-nav .nav-container { display: flex; justify-content: space-around; align-items: center; padding: 12px 0; }
+            .mobile-nav .nav-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; transition: all 0.3s ease; color: #666; }
+            .mobile-nav .nav-item.active { color: #3B82F6; transform: scale(1.1); }
+            .mobile-nav .nav-item .icon { font-size: 20px; margin-bottom: 4px; }
+            .mobile-nav .nav-item .text { font-size: 12px; }
+            .mobile-nav .nav-item.center {
+                background: #3B82F6;
+                color: white;
+                border-radius: 50%;
+                width: 48px;
+                height: 48px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-top: -24px;
+                box-shadow: 0 2px 10px rgba(59,130,246,0.3);
+            }
+            .mobile-nav .nav-item.center:hover { background: #2563eb; }
+        }
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: right 0.3s ease;
+                gap: 30px;
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-link {
+                font-size: 24px;
+            }
+
+            .dropdown-content {
+                position: static;
+                background: rgba(0, 0, 0, 0.5);
+                transform: none;
+                margin-top: 20px;
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .wechat-popup {
+                max-width: 280px;
+                padding: 25px 20px;
+            }
+            .wechat-qr {
+                width: 160px;
+                height: 160px;
+            }
+            .wechat-popup h3 {
+                font-size: 18px;
+            }
+            .wechat-popup p {
+                font-size: 13px;
+            }
+        }
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 20px 40px;
+        }
+        .report-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        .report-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #FFD700, #B8860B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            border-left: 4px solid #FFD700;
+        }
+        .section h2 {
+            font-size: 1.5rem;
+            color: #FFD700;
+            margin-bottom: 15px;
+        }
+        .section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .section li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .section li:last-child {
+            border-bottom: none;
+        }
+        .section strong {
+            color: #FFD700;
+        }
+        .conclusion {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(184, 134, 11, 0.2));
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            margin-top: 30px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+        .conclusion h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: linear-gradient(45deg, #FFD700, #B8860B);
+            color: #000;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h2><a href="https://tougu.aibochinese.com/" target="_blank">
+                    <img src="https://cf.aibochinese.com/%E7%B4%A0%E6%9D%90%E7%AB%99/202511/tougu%20logo.png" alt="网站Logo">
+                </a></h2>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">推荐平台 ▼</a>
+                    <div class="dropdown-content">
+                        <a href="https://blog.aibochinese.com/web3/kvb" class="dropdown-item">KVB plus</a>
+                        <a href="https://blog.aibochinese.com/web3/binance" class="dropdown-item">币安</a>
+                        <a href="https://blog.aibochinese.com/payment/roogoo" class="dropdown-item">Roogoo联名万事达卡</a>
+                    </div>
+                </li>
+             <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">资产组合钱包 ▼</a>
+                    <div class="dropdown-content">
+                        <a href="https://blog.aibochinese.com/payment/pinkwallet" class="dropdown-item">PinkWallet</a>
+                        <a href="https://blog.aibochinese.com/payment/SafePal" class="dropdown-item">SafePal</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="https://tougu.aibochinese.com/forex" class="nav-link">外汇</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://tougu.aibochinese.com/stock-index" class="nav-link">美港股</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://tougu.aibochinese.com/commondities" class="nav-link">大宗商品</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://tougu.aibochinese.com/crypto" class="nav-link">加密货币</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://tougu.aibochinese.com/transfer" class="nav-link">出入金</a>
+                </li>
+            </ul>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="report-container">
+            <h1 class="report-title">沃尔玛 (WMT) 股票调研报告</h1>
+
+            <div class="section">
+                <h2>1. 基本信息</h2>
+                <ul>
+                    <li><strong>公司名称</strong>: 沃尔玛</li>
+                    <li><strong>股票代码</strong>: WMT</li>
+                    <li><strong>所属行业</strong>: 零售</li>
+                    <li><strong>当前市值</strong>: 4200 亿美元 (截至 2024-03-20)</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>2. 财务数据 (2023 年)</h2>
+                <ul>
+                    <li><strong>营收</strong>: 6040 亿美元 (同比增长 3.5%)</li>
+                    <li><strong>净利润</strong>: 129 亿美元 (同比增长 9.1%)</li>
+                    <li><strong>毛利率</strong>: 24.6%</li>
+                    <li><strong>EBITDA</strong>: 225 亿美元</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>3. 业绩趋势</h2>
+                <ul>
+                    <li><strong>30 日表现</strong>: +1.5% (电商需求回升)</li>
+                    <li><strong>90 日表现</strong>: +5.8% (节日期间销售)</li>
+                    <li><strong>近一年趋势</strong>: +14.7%</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>4. 关键分析</h2>
+                <ul>
+                    <li><strong>行业地位</strong>: 1.2 亿家庭触达，1.8 万仓库高效供应链</li>
+                    <li><strong>竞争分析</strong>: 亚马逊 30% 电商平台的 60% 控制，但线下 87% 体验差距</li>
+                    <li><strong>风险因素</strong>: 供应链成本波动、线下租金上涨 15%</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>5. 未来展望</h2>
+                <ul>
+                    <li><strong>战略重点</strong>: 2024 电商 50% 配送 24 小时内完成，3.6% 增长预期率</li>
+                    <li><strong>短期催化剂</strong>: 4 月 28 日 500 万会员入会 50% 优惠计划</li>
+                </ul>
+            </div>
+
+            <div class="conclusion">
+                <h2>6. 结论</h2>
+                <p><strong>✅ 买入评级</strong>：电商 13% 降幅间，接近成本收缩 30% 价格。建议 10% 资金介入。</p>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="https://tougu.aibochinese.com/reports" class="back-link">← 返回研报列表</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <p style="margin-bottom: 10px;">感谢关注:
+                <a href="https://www.youtube.com/@blog.aibochinese" style="color:white; display:inline-block; vertical-align:middle;" target="_blank" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%C2%B7%E5%AE%A2%E5%9B%BE%E7%89%87%E5%BA%93/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E5%9B%BE%E7%89%87/youtube%20logo%2030.png" style="width: 30px; height: 30px; display:block;" /></a>
+                <a href="https://x.com/i/communities/1992468480244019435" style="color:white; display:inline-block; vertical-align:middle;" target="_blank" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%E6%B1%89%E8%AF%AD%E5%AE%A2%E6%88%B7%E7%AB%AF/icons8-x-30.png" style="width: 30px; height: 30px; display:block;" /></a>
+                <a href="https://www.facebook.com/blog.aibochinese" style="color:white; display:inline-block; vertical-align:middle;" target="_blank" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%C2%B7%E5%AE%A2%E5%9B%BE%E7%89%87%E5%BA%93/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E5%9B%BE%E7%89%87/facebook%20log0%2030.png" style="width: 30px; height: 30px; display:block;" /></a>
+                <a href="https://wa.me/message/QXYAFEGTDWIBE1" style="color:white; display:inline-block; vertical-align:middle;" target="_blank" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%B4%A0%E6%9D%90%E7%AB%99/whatsapp-48.png" style="width: 30px; height: 30px; display:block;" /></a>
+                <a href="https://space.bilibili.com/3690971141245681?spm_id_from=333.788.0.0" style="color:white; display:inline-block; vertical-align:middle;" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%B4%A0%E6%9D%90%E7%AB%99/icons8-%E8%83%86%E6%B1%81-30.png" style="width: 30px; height: 30px; display:block;" /></a>
+                <a href="https://github.com/blogaibochinese" style="color:white; display:inline-block; vertical-align:middle;" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%C2%B7%E5%AE%A2%E5%9B%BE%E7%89%87%E5%BA%93/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E5%9B%BE%E7%89%87/icons8-github-30.png" style="width: 30px; height: 30px; display:block;" /></a>
+                <a href="https://www.followme.ceo/u/833933/acc/3" style="color:white; display:inline-block; vertical-align:middle;" rel="noopener noreferrer"><img src="https://cf.aibochinese.com/%E7%B4%A0%E6%9D%90%E7%AB%99/202511/followme%20footer%20logo.png" style="width: 30px; height: 30px; display:block;" /></a>
+            </p>
+            <p style="font-size: 12px; color: hsl(0, 0%, 3%);">© 2025 <a href="https://blog.aibochinese.com/" style="color:red " target="_blank" rel="noopener noreferrer">爱博·客</a> - 所有权利保留</p>
+            <p>···</p>
+        </div>
+    </footer>
+
+    <div class="mobile-nav">
+        <div class="nav-container">
+            <a href="https://tougu.aibochinese.com/" class="nav-item active"><i class="fas fa-home icon"></i><span class="text">首页</span></a>
+            <a href="https://tougu.aibochinese.com/strategy" class="nav-item"><i class="fas fa-map"></i><span class="text">策略</span></a>
+            <a href="https://tougu.aibochinese.com/newest" class="nav-item center"><i class="fas fa-sync-alt icon"></i><span class="text">最新</span></a>
+            <a href="https://tougu.aibochinese.com/reports" class="nav-item"><i class="fas fa-chart-line"></i><span class="text">研报</span></a>
+            <a href="https://tougu.aibochinese.com/sure-win" class="nav-item"><i class="fas fa-dollar-sign icon"></i><span class="text">淘金</span></a>
+        </div>
+    </div>
+
+    <div class="float-icons-container">
+        <div class="wechat-float" onclick="toggleWechatModal()">
+            <div class="wechat-icon"></div>
+        </div>
+        
+        <div class="search-float" onclick="toggleSearchModal()">
+            <i class="fa fa-search text-white text-2xl"></i>
+        </div>
+    </div>
+
+    <div id="searchModal" class="search-modal" onclick="closeSearchModal(event)">
+        <div class="search-popup" onclick="event.stopPropagation()">
+            <h3>搜索内容</h3>
+            <div id="pagefind-search-popup"></div>
+            <button class="close-btn" onclick="closeSearchModal()">关闭</button>
+        </div>
+    </div>
+
+    <div id="wechatModal" class="wechat-modal" onclick="closeWechatModal(event)">
+        <div class="wechat-popup" onclick="event.stopPropagation()">
+            <h3>微信客服</h3>
+            <img src="https://cf.aibochinese.com/%E7%88%B1%E5%8D%9A%C2%B7%E5%AE%A2%E5%9B%BE%E7%89%87%E5%BA%93/%E6%B7%BB%E5%8A%A0%E5%BE%AE%E4%BF%A1.png" alt="微信二维码" class="wechat-qr">
+            <p>扫描添加客服微信</p>
+            <button class="close-btn" onclick="closeWechatModal()">关闭</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleSearchModal() {
+            const modal = document.getElementById('searchModal');
+            modal.classList.toggle('active');
+        }
+
+        function closeSearchModal(event) {
+            document.getElementById('searchModal').classList.remove('active');
+        }
+
+        function toggleWechatModal() {
+            const modal = document.getElementById('wechatModal');
+            modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function closeWechatModal(event) {
+            document.getElementById('wechatModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const searchModal = document.getElementById('searchModal');
+            const wechatModal = document.getElementById('wechatModal');
+            
+            if (event.target === searchModal) {
+                closeSearchModal();
+            } else if (event.target === wechatModal) {
+                closeWechatModal();
+            }
+        };
+
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
